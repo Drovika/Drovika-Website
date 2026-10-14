@@ -1,4 +1,4 @@
-import { MapPin, Truck, PackageCheck } from 'lucide-react';
+import { MapPin, Truck, PackageCheck, MoveRight } from 'lucide-react';
 
 const STEPS = [
   {
@@ -39,6 +39,7 @@ export default function HowItWorks() {
           <span className="eyebrow">How it works</span>
           <h2 className="h-section">Booked in 60 seconds. <br className="br-d" />Delivered with care.</h2>
         </div>
+        <p className="rail-hint rail-hint--center" aria-hidden="true">Swipe for the next step <MoveRight size={16} /></p>
         <ol className="how__steps">
           {STEPS.map(({ Icon, t, d, ui }, i) => (
             <li key={t} className="hstep rv" style={{ '--d': `${i * 0.12}s` }}>

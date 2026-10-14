@@ -6,6 +6,7 @@ import '@fontsource/poppins/700.css';
 import '@/styles/base.css';
 import '@/styles/home.css';
 import '@/styles/pages.css';
+import '@/styles/refine.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Reveal from '@/components/Reveal';

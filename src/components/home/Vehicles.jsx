@@ -1,4 +1,4 @@
-import { ArrowRight, Check, Weight, Ruler } from 'lucide-react';
+import { ArrowRight, Check, Weight, Ruler, MoveRight } from 'lucide-react';
 import VehicleArt from '../VehicleArt';
 import { vehicles } from '@/config/site';
 
@@ -11,6 +11,7 @@ export default function Vehicles() {
           <h2 className="h-section">The right vehicle for every load.</h2>
           <p className="lead">From a single fridge to a full 3 BHK — pick the size that fits. Your exact price is shown before you book.</p>
         </div>
+        <p className="rail-hint" aria-hidden="true">Swipe to compare all {vehicles.length} vehicles <MoveRight size={16} /></p>
         <div className="vgrid">
           {vehicles.map((v, i) => (
             <article key={v.slug} className="vcard rv" style={{ '--d': `${i * 0.08}s` }}>
