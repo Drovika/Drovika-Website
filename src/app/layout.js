@@ -41,17 +41,39 @@ export const viewport = {
   initialScale: 1,
 };
 
+// What Google reads about Drovika (company card, site name and logo in search results)
+const sameAs = [site.instagram, site.facebook, site.linkedin, site.x].filter(Boolean);
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'MovingCompany',
-  name: site.name,
-  url: site.url,
-  logo: `${site.url}/icon.svg`,
-  telephone: site.phone,
-  email: site.email,
-  areaServed: ['Mumbai', 'Thane', 'Navi Mumbai'],
-  address: { '@type': 'PostalAddress', addressLocality: 'Mumbai', addressRegion: 'Maharashtra', addressCountry: 'IN' },
-  priceRange: '₹₹',
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      '@id': `${site.url}/#website`,
+      name: site.name,
+      alternateName: ['Drovika Mumbai', 'drovika.in'],
+      url: `${site.url}/`,
+      inLanguage: 'en-IN',
+      publisher: { '@id': `${site.url}/#company` },
+    },
+    {
+      '@type': ['Organization', 'MovingCompany'],
+      '@id': `${site.url}/#company`,
+      name: site.name,
+      url: `${site.url}/`,
+      logo: { '@type': 'ImageObject', url: `${site.url}/logo.png`, width: 512, height: 512 },
+      image: `${site.url}/og.png`,
+      description: `Book a 3 wheeler, Tata Ace, pickup, tempo or truck in Mumbai, Thane and Navi Mumbai. Fixed price before you book, live tracking and verified drivers. Starting ₹${fromPrice}.`,
+      slogan: site.tagline,
+      telephone: site.phone,
+      email: site.email,
+      areaServed: ['Mumbai', 'Thane', 'Navi Mumbai', 'Mira-Bhayandar', 'Vasai-Virar', 'Bhiwandi', 'Kalyan', 'Panvel'].map((n) => ({ '@type': 'City', name: n })),
+      address: { '@type': 'PostalAddress', addressLocality: 'Mumbai', addressRegion: 'Maharashtra', addressCountry: 'IN' },
+      openingHours: 'Mo-Su 08:00-22:00',
+      priceRange: `From ₹${fromPrice}`,
+      contactPoint: [{ '@type': 'ContactPoint', contactType: 'customer support', telephone: site.phone, email: site.email, areaServed: 'IN', availableLanguage: ['English', 'Hindi'] }],
+      ...(sameAs.length ? { sameAs } : {}),
+    },
+  ],
 };
 
 export default function RootLayout({ children }) {
