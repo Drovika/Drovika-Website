@@ -1,5 +1,5 @@
 import { MapPin } from 'lucide-react';
-import { areas } from '@/config/site';
+import { areaGroups } from '@/config/site';
 
 export default function Areas() {
   return (
@@ -7,8 +7,8 @@ export default function Areas() {
       <div className="wrap areas__row">
         <div className="areas__copy rv">
           <span className="eyebrow">Service area</span>
-          <h2 className="h-section">From Colaba to Virar, Thane to Panvel.</h2>
-          <p className="lead">Drovika covers the whole Mumbai Metropolitan Region. If both your pickup and drop are inside the zone, we&apos;ll get it there.</p>
+          <h2 className="h-section">From Colaba to Palghar, Uran to Badlapur.</h2>
+          <p className="lead">Drovika covers Mumbai, Thane district, Navi Mumbai and the Vasai–Palghar belt. If your pickup, drop and stops are all inside this zone, we&apos;ll get it there.</p>
         </div>
         <div className="areas__map rv" style={{ '--d': '.1s' }}>
           <svg viewBox="0 0 320 380" aria-hidden="true" className="areas__svg">
@@ -23,7 +23,7 @@ export default function Areas() {
             <circle cx="190" cy="190" r="150" fill="url(#ag)" />
             {[
               [128, 330, 'Colaba'], [150, 250, 'Dadar'], [146, 205, 'Bandra'], [160, 168, 'Andheri'], [162, 108, 'Borivali'],
-              [176, 40, 'Virar'], [222, 140, 'Thane'], [232, 238, 'Vashi'], [262, 290, 'Panvel'], [196, 222, 'Kurla'],
+              [172, 22, 'Palghar'], [178, 62, 'Virar'], [222, 140, 'Thane'], [232, 238, 'Vashi'], [262, 290, 'Panvel'], [196, 222, 'Kurla'],
             ].map(([x, y, n], i) => (
               <g key={n} className="apin" style={{ '--i': i }}>
                 <circle cx={x} cy={y} r="10" fill="#0F4A2C" fillOpacity=".12" className="apin__ping" />
@@ -33,9 +33,16 @@ export default function Areas() {
             ))}
           </svg>
         </div>
-        <ul className="areas__chips rv" style={{ '--d': '.15s' }}>
-          {areas.map((a) => <li key={a}><MapPin size={14} />{a}</li>)}
-        </ul>
+        <div className="areas__groups rv" style={{ '--d': '.15s' }}>
+          {areaGroups.map((g) => (
+            <div key={g.region} className="areas__group">
+              <h3>{g.region}</h3>
+              <ul className="areas__chips">
+                {g.places.map((a) => <li key={a}><MapPin size={14} />{a}</li>)}
+              </ul>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

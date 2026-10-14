@@ -365,3 +365,14 @@
   .docs__veh svg { height: 30px; }
   .docs__veh figcaption { font-size: 11px; }
 }
+
+/* ── Service area, grouped by region ─────────────────────── */
+.areas__groups { grid-area: chips; align-self: start; display: grid; gap: 16px; }
+.areas__group h3 { font-family: var(--body); font-size: 14px; font-weight: 700; color: var(--green); margin-bottom: 8px; }
+.areas__group .areas__chips { grid-area: auto; gap: 6px; }
+.areas__group .areas__chips li { font-size: 13.5px; padding: 5px 12px 5px 9px; }
+@media (max-width: 640px) {
+  .areas__groups { gap: 12px; }
+  .areas__group h3 { font-size: 13px; margin-bottom: 6px; }
+  .areas__group .areas__chips li { font-size: 12.5px; padding: 4px 10px 4px 8px; }
+}

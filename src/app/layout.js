@@ -66,7 +66,7 @@ const jsonLd = {
       slogan: site.tagline,
       telephone: site.phone,
       email: site.email,
-      areaServed: ['Mumbai', 'Thane', 'Navi Mumbai', 'Mira-Bhayandar', 'Vasai-Virar', 'Bhiwandi', 'Kalyan', 'Panvel'].map((n) => ({ '@type': 'City', name: n })),
+      areaServed: ['Mumbai', 'Thane', 'Navi Mumbai', 'Mira-Bhayandar', 'Vasai-Virar', 'Bhiwandi', 'Kalyan', 'Dombivli', 'Ulhasnagar', 'Ambernath', 'Badlapur', 'Panvel', 'Uran', 'Palghar'].map((n) => ({ '@type': 'City', name: n })),
       address: { '@type': 'PostalAddress', addressLocality: 'Mumbai', addressRegion: 'Maharashtra', addressCountry: 'IN' },
       openingHours: 'Mo-Su 08:00-22:00',
       priceRange: `From ₹${fromPrice}`,

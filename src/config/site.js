@@ -49,12 +49,15 @@ export const vehicles = [
 // Lowest "starting from" price (shown in the hero and in Google results)
 export const fromPrice = Math.min(...vehicles.map((v) => v.base));
 
-// Areas inside the Drovika service zone
-export const areas = [
-  'South Mumbai', 'Dadar', 'Bandra', 'Andheri', 'Goregaon', 'Malad', 'Borivali', 'Kurla',
-  'Ghatkopar', 'Chembur', 'Mulund', 'Powai', 'Thane', 'Navi Mumbai', 'Vashi', 'Panvel',
-  'Mira-Bhayandar', 'Vasai-Virar', 'Bhiwandi', 'Kalyan',
+// Areas inside the Drovika service zone, grouped by region.
+// Must match the app's service area (backend: cities.service_area). Change both together.
+export const areaGroups = [
+  { region: 'Mumbai', places: ['Colaba', 'South Mumbai', 'Dadar', 'Bandra', 'Andheri', 'Goregaon', 'Malad', 'Borivali', 'Dahisar', 'Kurla', 'Ghatkopar', 'Chembur', 'Powai', 'Mulund'] },
+  { region: 'Thane district', places: ['Thane', 'Mira-Bhayandar', 'Bhiwandi', 'Kalyan', 'Dombivli', 'Ulhasnagar', 'Ambernath', 'Badlapur', 'Titwala'] },
+  { region: 'Navi Mumbai', places: ['Vashi', 'Nerul', 'Belapur', 'Kharghar', 'Panvel', 'Taloja', 'Uran'] },
+  { region: 'Vasai to Palghar', places: ['Naigaon', 'Vasai', 'Nalasopara', 'Virar', 'Saphale', 'Palghar'] },
 ];
+export const areas = areaGroups.flatMap((g) => g.places);
 
 export const waLink = (text = 'Hi Drovika, I need help with a booking.') =>
   `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(text)}`;
