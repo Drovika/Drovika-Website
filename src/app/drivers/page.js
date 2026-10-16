@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Banknote, MapPin, CalendarClock, Landmark, House, Milestone, Smartphone, FileText, BadgeCheck, Navigation, Check, Plus, ArrowRight, Phone, Lock, Route } from 'lucide-react';
+import { Banknote, MapPin, CalendarClock, Landmark, House, Milestone, Smartphone, FileText, BadgeCheck, Navigation, Check, Plus, ArrowRight, Phone, Lock, Route, Zap, UserX, Camera, Wrench, Timer } from 'lucide-react';
 import StoreButton, { WhatsAppIcon } from '@/components/StoreButton';
 import VehicleArt from '@/components/VehicleArt';
 import { vehicles, waLink, telLink, site } from '@/config/site';
@@ -19,12 +19,24 @@ const STEPS = [
 
 const DOCS = ['Driving licence', 'Vehicle RC', 'Aadhaar card', 'PAN card', 'Vehicle photo', 'Bank account / UPI for payouts'];
 
+// Fair rules for partners — must match Admin → Cancellations → Rules
+const FAIR = [
+  [Zap, 'Wasted trip? The next one is yours', 'If a customer cancels after you reach the pickup, or after you have driven 500 m or more towards it, the next nearby trip comes to you first.'],
+  [UserX, 'Customer not reachable? You are covered', 'Wait 10 minutes at the pickup and call twice from the app. Then you can cancel, and it does not count against you.'],
+  [Camera, 'Goods not as booked? Show a photo', 'Too heavy, not fitting, not allowed, or a different trip? Take a live photo at the pickup and cancel without a penalty.'],
+  [Wrench, 'Vehicle broke down? Take a break', 'Send a photo of your number plate, rest for an hour, and send a photo of the fixed vehicle to go online again.'],
+  [Timer, 'Loading time is clear from the start', 'Every trip includes a set time for loading and unloading, by vehicle size. You and the customer see the same timer.'],
+];
+
 const QA = [
   ['How much do I earn per trip?', 'Drovika keeps a small service fee on each trip and the rest is yours. The app shows your exact earning for every trip before you accept it.'],
   ['How do I get paid?', 'For cash trips you collect the fare from the customer directly. For online-paid trips, your earning is added to your Drovika wallet and you can request a withdrawal to your bank account.'],
   ['What about cash trips?', 'On cash trips you keep the cash, and Drovika’s service fee is added to your dues. Clear them from the app with UPI. Each vehicle has a dues limit — ₹500 for small vehicles and pickups, ₹1,000 for Tata 407 and 14 ft tempos, ₹1,500 for trucks. At the limit, new trips pause until you pay; there is no late fee.'],
   ['What is go-home mode?', 'Set your home location once in the app. When you are ready to head back, turn on go-home mode and you will only get trips whose drop is closer to your home. It works up to 2 times a day, for 3 hours each time, and switches off by itself when you reach near home.'],
   ['What if the customer uses a coupon?', 'Your earning stays the same. On a cash trip you collect the discounted amount the app shows, and Drovika adds the coupon amount to your wallet.'],
+  ['What if I need to cancel a trip?', 'Everyone has a bad day, so 1 cancel a day is free. Cancels with proof (customer not at the pickup, goods not as booked, breakdown) do not count once checked. If you cancel more often, new trips pause for a short while. The app always shows why, and you can appeal from the app.'],
+  ['What is the cancellation score?', 'It shows how many of your accepted trips you cancelled in the last 7 days, at the bottom of your home screen. 5% or less is excellent and gets you trips first. A higher score means trips reach you a little later, and our team checks in if it gets very high.'],
+  ['When do I get my next trip after a cash trip?', 'Collect the cash and tap "Cash received" in the app. New trip requests come only after that, so every cash trip is settled properly.'],
   ['Do I need to work fixed hours?', 'No. Go online when you want to take trips and go offline when you are done.'],
   ['Which vehicles can join?', '3 wheelers, Tata Ace and other mini trucks, 8 ft and 9 ft pickups, Tata 407, 14 ft tempos, and 17 ft and 19 ft trucks — all with valid papers.'],
   ['What about tolls?', 'When a trip passes a toll naka or toll bridge, the toll is already added to the fare and comes to you in full — Drovika takes no commission on it. You pay it at the naka as usual.'],
@@ -33,16 +45,17 @@ const QA = [
 export default function Drivers() {
   return (
     <>
-      <section className="hero dhero">
+      <section className="hero hero--p dhero">
         <div className="hero__bg" aria-hidden="true">
           <div className="hero__glow hero__glow--a" />
           <div className="hero__glow hero__glow--b" />
           <div className="hero__grid" />
+          <div className="grain" />
         </div>
         <div className="wrap dhero__row">
           <div className="dhero__copy">
             <span className="hero__pill"><i />Drovika Partner · Mumbai</span>
-            <h1 className="h-display hero__title">Your vehicle. Your hours. <span className="hero__lime">Your earnings.</span></h1>
+            <h1 className="h-display hero__title">Your vehicle<span className="pn">.</span> Your hours<span className="pn">.</span> <span className="hero__lime it">Your earnings.</span></h1>
             <p className="hero__lead">Attach your 3 wheeler, Tata Ace, pickup, tempo or truck with Drovika and get goods transport trips across Mumbai — no middlemen, no fixed shifts.</p>
             <div className="hero__ctas">
               <StoreButton app="partner" label="Partner app" />
@@ -74,7 +87,7 @@ export default function Drivers() {
         <div className="wrap">
           <div className="sec__head sec__head--center rv">
             <span className="eyebrow">Why partners choose us</span>
-            <h2 className="h-section">Built to keep your wheels turning.</h2>
+            <h2 className="h-section">Built to keep <span className="it">your wheels turning.</span></h2>
           </div>
           <div className="dperks dperks--6">
             {[
@@ -95,11 +108,39 @@ export default function Drivers() {
         </div>
       </section>
 
+      <section className="sec fair" id="fair">
+        <div className="wrap fair__row">
+          <div className="rv">
+            <span className="eyebrow">Fair rules</span>
+            <h2 className="h-section">Fair rules <span className="it">for every trip.</span></h2>
+            <p className="lead">The same clear rules apply to customers and partners. When plans change, nobody loses out, and partners who keep their word get trips first.</p>
+            <ul className="fair__list">
+              {FAIR.map(([Icon, t, d]) => (
+                <li key={t}><span><Icon size={19} /></span><div><b>{t}</b><p>{d}</p></div></li>
+              ))}
+            </ul>
+          </div>
+          <div className="score rv" style={{ '--d': '.1s' }} aria-label="Cancellation score as shown on the Partner app home screen">
+            <div className="grain" aria-hidden="true" />
+            <div className="score__top"><small>Your cancellation score · last 7 days</small><span className="score__badge">Excellent</span></div>
+            <div className="score__big">3%<small>1 of 34 trips</small></div>
+            <div className="score__bar"><i /></div>
+            <div className="score__legend">
+              <div><b>0–5%</b><small>Excellent · trips first</small></div>
+              <div><b>5–15%</b><small>Good</small></div>
+              <div><b>15–25%</b><small>High · trips a bit later</small></div>
+              <div><b>25%+</b><small>Our team checks in</small></div>
+            </div>
+            <p className="score__note">Shown at the bottom of your home screen in the Partner app.</p>
+          </div>
+        </div>
+      </section>
+
       <section className="sec join">
         <div className="wrap join__row">
           <div className="rv">
             <span className="eyebrow">How to join</span>
-            <h2 className="h-section join__title">Start earning in four steps.</h2>
+            <h2 className="h-section join__title">Start earning in four steps<span className="pn">.</span></h2>
             <ol className="join__steps">
               {STEPS.map(([Icon, t, d], i) => (
                 <li key={t}>
@@ -124,7 +165,7 @@ export default function Drivers() {
         <div className="wrap faq__row">
           <div className="faq__head rv">
             <span className="eyebrow">Partner FAQs</span>
-            <h2 className="h-section">Good to know.</h2>
+            <h2 className="h-section">Good to know<span className="pn">.</span></h2>
             <p className="lead">Still have a question? <a className="nowrap" href={telLink()}>Call {site.phone}</a></p>
           </div>
           <div className="faq__list">
@@ -141,7 +182,7 @@ export default function Drivers() {
       <section className="sec cta-band">
         <div className="wrap">
           <div className="cta rv">
-            <h2 className="h-section">Ready to drive with Drovika?</h2>
+            <h2 className="h-section">Ready to drive with Drovika<span className="pn">?</span></h2>
             <p>Download the Partner app and finish sign-up in about 10 minutes.</p>
             <div className="cta__btns">
               <StoreButton app="partner" />

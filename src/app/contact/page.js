@@ -18,7 +18,7 @@ export default function Contact() {
   ];
   return (
     <>
-      <PageHero eyebrow="Contact" title={<>We&apos;re here to <span className="hl">help.</span></>} lead="Booking stuck? Planning a big move? Want Drovika for your business? Reach out — a real person will answer." />
+      <PageHero eyebrow="Contact" title={<>We&apos;re here to <span className="it">help.</span></>} lead="Booking stuck? Planning a big move? Want Drovika for your business? Reach out — a real person will answer." />
       <section className="sec contact">
         <div className="wrap contact__row">
           <div className="contact__left">

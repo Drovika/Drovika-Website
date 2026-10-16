@@ -1,5 +1,4 @@
 import Hero from '@/components/home/Hero';
-import Marquee from '@/components/home/Marquee';
 import Vehicles from '@/components/home/Vehicles';
 import HowItWorks from '@/components/home/HowItWorks';
 import Pricing from '@/components/home/Pricing';
@@ -10,13 +9,16 @@ import DriverBand from '@/components/home/DriverBand';
 import Areas from '@/components/home/Areas';
 import FAQ from '@/components/home/FAQ';
 import Download from '@/components/home/Download';
+import DrovikaPromise from '@/components/home/Promise';
+import FreeTime from '@/components/home/FreeTime';
 
 export default function Home() {
   return (
     <>
       <Hero />
-      
+      <DrovikaPromise />
       <Vehicles />
+      <FreeTime />
       <HowItWorks />
       <Pricing />
       <Features />

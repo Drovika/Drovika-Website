@@ -18,7 +18,7 @@ export default function Pricing() {
       <div className="wrap price__row">
         <div className="price__copy rv">
           <span className="eyebrow">Upfront pricing</span>
-          <h2 className="h-section">Know your fare <span className="hl">before</span> you book.</h2>
+          <h2 className="h-section">Know your fare <span className="it">before</span> you book<span className="pn">.</span></h2>
           <p className="lead">No calls, no quotes, no surprises. The Drovika app shows you the full price the moment you choose your route.</p>
           <ul className="price__points">
             {POINTS.map(([Icon, t, d]) => (

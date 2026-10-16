@@ -6,7 +6,7 @@ export default function Features() {
       <div className="wrap">
         <div className="sec__head rv">
           <span className="eyebrow">Why Drovika</span>
-          <h2 className="h-section">Everything that should have been simple, <span className="hl">finally is.</span></h2>
+          <h2 className="h-section">Everything that should have been simple<span className="pn">,</span> <span className="it">finally is.</span></h2>
         </div>
         <div className="bento">
           <article className="bx bx--track rv">

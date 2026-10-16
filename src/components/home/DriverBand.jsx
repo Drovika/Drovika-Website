@@ -1,13 +1,13 @@
 import Link from 'next/link';
-import { ArrowRight, Banknote, MapPin, CalendarClock, ShieldCheck } from 'lucide-react';
+import { ArrowRight, Banknote, MapPin, Zap, ShieldCheck } from 'lucide-react';
 import VehicleArt from '../VehicleArt';
 import StoreButton from '../StoreButton';
 
 const PERKS = [
   [Banknote, 'Keep most of every fare', 'A small, fair service fee. See your earning on every trip before you accept.'],
   [MapPin, 'Trips near you — and home', 'Get requests close to you. Heading home? Turn on go-home mode and get trips going your way.'],
-  [CalendarClock, 'Your time, your rules', 'Go online when you want. No fixed shifts, no targets.'],
-  [ShieldCheck, 'Withdraw to your bank', 'Online trip earnings go to your wallet — withdraw to your bank account or UPI.'],
+  [Zap, 'Wasted trip? Next one is yours', 'If a customer cancels after you reach the pickup, you get the next nearby trip first.'],
+  [ShieldCheck, 'Fair rules, shown to you', 'Your cancellation score is on your home screen. Show up on time and get more trips.'],
 ];
 
 export default function DriverBand() {
@@ -17,8 +17,8 @@ export default function DriverBand() {
       <div className="wrap dband__row">
         <div className="dband__copy rv">
           <span className="eyebrow eyebrow--light">Drovika Partner</span>
-          <h2 className="h-section">Own a tempo or truck? <span className="dband__lime">Earn more with it.</span></h2>
-          <p className="dband__lead">Join Drovika as a driver partner and get steady trips across Mumbai — with fair pay and no middlemen.</p>
+          <h2 className="h-section">Own a tempo or truck<span className="pn">?</span> <span className="dband__lime it">Earn more with it.</span></h2>
+          <p className="dband__lead">Join Drovika as a driver partner and get steady trips across Mumbai, with fair pay, fair rules and no middlemen.</p>
           <div className="dband__ctas">
             <StoreButton app="partner" label="Partner app" />
             <Link href="/drivers/" className="btn btn--ghost-light">Learn more <ArrowRight size={18} /></Link>

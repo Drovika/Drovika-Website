@@ -15,7 +15,7 @@ export default function About() {
     <>
       <PageHero
         eyebrow="About Drovika"
-        title={<>Moving Mumbai, <span className="hl">one load</span> at a time.</>}
+        title={<>Moving Mumbai<span className="pn">,</span> <span className="it">one load</span> at a time<span className="pn">.</span></>}
         lead="Drovika makes booking a mini truck as easy as booking a cab — with honest prices for customers and fair earnings for the people behind the wheel."
       />
 
@@ -76,7 +76,7 @@ export default function About() {
       <section className="sec cta-band">
         <div className="wrap">
           <div className="cta rv">
-            <h2 className="h-section">Let&apos;s move something together.</h2>
+            <h2 className="h-section">Let&apos;s move something together<span className="pn">.</span></h2>
             <p>Questions, partnerships or business deliveries — we&apos;d love to hear from you.</p>
             <div className="cta__btns">
               <Link href="/contact/" className="btn btn--lime">Contact us <ArrowRight size={18} /></Link>

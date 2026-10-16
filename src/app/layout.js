@@ -1,12 +1,11 @@
 import '@fontsource/baloo-2/800.css';
-import '@fontsource/poppins/400.css';
-import '@fontsource/poppins/500.css';
-import '@fontsource/poppins/600.css';
-import '@fontsource/poppins/700.css';
+import '@fontsource-variable/plus-jakarta-sans';
+import '@fontsource/instrument-serif/400-italic.css';
 import '@/styles/base.css';
 import '@/styles/home.css';
 import '@/styles/pages.css';
 import '@/styles/refine.css';
+import '@/styles/premium.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Reveal from '@/components/Reveal';
@@ -19,7 +18,7 @@ export const metadata = {
     template: '%s · Drovika',
   },
   description:
-    `Book a 3 wheeler, Tata Ace, pickup, tempo or truck in Mumbai, Thane and Navi Mumbai in under a minute. Fixed price before you book, live tracking, verified drivers. Starting ₹${fromPrice}.`,
+    `Book a 3 wheeler, Tata Ace, pickup, tempo or truck in Mumbai, Thane, Navi Mumbai and up to Palghar in under a minute. Fixed price before you book, free cancellation, free loading and unloading time, live tracking and verified drivers. Starting ₹${fromPrice}.`,
   keywords: ['mini truck booking Mumbai', 'tempo on rent Mumbai', 'goods transport Mumbai', 'house shifting Mumbai', 'Tata Ace booking', 'Porter alternative', 'Drovika'],
   applicationName: 'Drovika',
   openGraph: {
@@ -28,7 +27,7 @@ export const metadata = {
     locale: 'en_IN',
     url: '/',
     title: 'Drovika — Goods transport across Mumbai',
-    description: 'Mini trucks, tempos and trucks in minutes. Fixed fares, live tracking, verified drivers.',
+    description: 'Mini trucks, tempos and trucks in minutes. Fixed fares, free cancellation, free loading time and verified drivers.',
     images: [{ url: '/og.png', width: 1200, height: 630, alt: 'Drovika' }],
   },
   twitter: { card: 'summary_large_image', images: ['/og.png'] },
@@ -36,7 +35,7 @@ export const metadata = {
 };
 
 export const viewport = {
-  themeColor: '#0A3620',
+  themeColor: '#072A17',
   width: 'device-width',
   initialScale: 1,
 };
@@ -66,7 +65,7 @@ const jsonLd = {
       slogan: site.tagline,
       telephone: site.phone,
       email: site.email,
-      areaServed: ['Mumbai', 'Thane', 'Navi Mumbai', 'Mira-Bhayandar', 'Vasai-Virar', 'Bhiwandi', 'Kalyan', 'Dombivli', 'Ulhasnagar', 'Ambernath', 'Badlapur', 'Panvel', 'Uran', 'Palghar'].map((n) => ({ '@type': 'City', name: n })),
+      areaServed: ['Mumbai', 'Thane', 'Navi Mumbai', 'Mira-Bhayandar', 'Vasai-Virar', 'Palghar', 'Bhiwandi', 'Kalyan', 'Dombivli', 'Ulhasnagar', 'Ambernath', 'Badlapur', 'Panvel', 'Uran'].map((n) => ({ '@type': 'City', name: n })),
       address: { '@type': 'PostalAddress', addressLocality: 'Mumbai', addressRegion: 'Maharashtra', addressCountry: 'IN' },
       openingHours: 'Mo-Su 08:00-22:00',
       priceRange: `From ₹${fromPrice}`,

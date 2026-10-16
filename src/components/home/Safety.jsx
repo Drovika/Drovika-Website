@@ -33,7 +33,7 @@ export default function Safety() {
       <div className="wrap">
         <div className="sec__head sec__head--center rv">
           <span className="eyebrow">Safety &amp; security</span>
-          <h2 className="h-section">Built on trust, <span className="hl">on both sides.</span></h2>
+          <h2 className="h-section">Built on trust<span className="pn">,</span> <span className="it">on both sides.</span></h2>
           <p className="lead">Whether you are sending goods or driving for us, your safety, your money and your data are protected at every step.</p>
         </div>
         <div className="safe__grid">

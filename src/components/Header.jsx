@@ -7,7 +7,7 @@ import { Logo } from './BrandMark';
 
 const NAV = [
   { href: '/#vehicles', label: 'Vehicles' },
-  
+  { href: '/#fare', label: 'Pricing' },
   { href: '/#how', label: 'How it works' },
   { href: '/drivers/', label: 'Drive with us' },
   { href: '/about/', label: 'About' },

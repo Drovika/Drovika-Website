@@ -34,7 +34,7 @@ export default function Footer() {
             <Link href="/#vehicles">House shifting</Link>
             <Link href="/#vehicles">Shop &amp; business deliveries</Link>
             <Link href="/#safety">Safety &amp; security</Link>
-            
+            <Link href="/#fare">Pricing</Link>
           </div>
           <div className="ftr__col">
             <h4>Reach us</h4>

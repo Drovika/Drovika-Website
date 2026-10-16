@@ -37,7 +37,7 @@ export default function HowItWorks() {
       <div className="wrap">
         <div className="sec__head sec__head--center rv">
           <span className="eyebrow">How it works</span>
-          <h2 className="h-section">Booked in 60 seconds. <br className="br-d" />Delivered with care.</h2>
+          <h2 className="h-section">Booked in 60 seconds<span className="pn">.</span> <br className="br-d" />Delivered with care<span className="pn">.</span></h2>
         </div>
         <p className="rail-hint rail-hint--center" aria-hidden="true">Swipe for the next step <MoveRight size={16} /></p>
         <ol className="how__steps">

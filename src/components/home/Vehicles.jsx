@@ -1,6 +1,6 @@
-import { ArrowRight, Check, Weight, Ruler, MoveRight } from 'lucide-react';
+import { ArrowRight, Check, Weight, Ruler, MoveRight, Timer } from 'lucide-react';
 import VehicleArt from '../VehicleArt';
-import { vehicles } from '@/config/site';
+import { vehicles, fmtMin } from '@/config/site';
 
 export default function Vehicles() {
   return (
@@ -8,7 +8,7 @@ export default function Vehicles() {
       <div className="wrap">
         <div className="sec__head rv">
           <span className="eyebrow">Our fleet</span>
-          <h2 className="h-section">The right vehicle for every load.</h2>
+          <h2 className="h-section">The right vehicle <span className="it">for every load.</span></h2>
           <p className="lead">From a single fridge to a full 3 BHK — pick the size that fits. Your exact price is shown before you book.</p>
         </div>
         <p className="rail-hint" aria-hidden="true">Swipe to compare all {vehicles.length} vehicles <MoveRight size={16} /></p>
@@ -34,6 +34,7 @@ export default function Vehicles() {
                   <span><Weight size={15} /> {v.capacity.replace('Upto ', '')}</span>
                   <span><Ruler size={15} /> {v.size} <em>approx.</em></span>
                 </div>
+                <div className="vcard__free"><Timer size={15} /><span><b>{fmtMin(v.freeMin)}</b> loading <i>+</i> <b>{fmtMin(v.freeMin)}</b> unloading included</span></div>
                 <ul className="vcard__list">
                   {v.bestFor.map((b) => <li key={b}><Check size={15} />{b}</li>)}
                 </ul>

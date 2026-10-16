@@ -10,7 +10,7 @@ export default function Download() {
         <div className="dl__card rv">
           <div className="dl__copy">
             <BrandMark size={64} />
-            <h2 className="h-section">Your next move is one tap away.</h2>
+            <h2 className="h-section">Your next move is one tap away<span className="pn">.</span></h2>
             <ul>
               <li><Check size={18} /> Login with your mobile number — no passwords</li>
               <li><Check size={18} /> Save Home &amp; Shop addresses for one-tap repeat bookings</li>
