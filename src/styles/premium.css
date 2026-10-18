@@ -60,7 +60,8 @@ h1, h2, h3, h4 { font-weight: 750; }
 .hero__pill { gap: 10px; padding: 5px 16px 5px 5px; font-size: 14px; font-weight: 600; background: rgba(255, 255, 255, .06); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .12); }
 .hero__pill em { font-style: normal; font-size: 11.5px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; background: var(--lime); color: var(--ink); padding: 4px 10px; border-radius: 999px; }
 .hero__title { color: #F4F7EE; }
-.hero__lime { padding-right: .06em; }
+/* Gradient text is painted only inside its box: give the italic "y" room below the line so it isn't cut */
+.hero__lime { padding: 0 .08em .16em 0; margin-bottom: -.16em; line-height: 1.12; }
 .hero__lead { color: rgba(236, 244, 232, .72); max-width: 540px; }
 
 .hstats {
@@ -168,7 +169,7 @@ h1, h2, h3, h4 { font-weight: 750; }
 .pc__link { margin-top: auto; align-self: flex-start; font-weight: 700; font-size: 14.5px; color: var(--ink); border-bottom: 1.5px solid currentColor; padding-bottom: 1px; }
 
 .pc--a { grid-column: span 2; }
-.pc--b { grid-column: span 3; }
+.pc--b { grid-column: span 2; }
 .pc__btn { margin-top: 18px; justify-self: start; display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 999px; background: var(--ink); color: #fff; font-size: 13.5px; font-weight: 700; }
 .pc__btn svg { color: var(--lime); }
 .pc__ask { margin-top: 18px; padding: 14px; border-radius: 16px; background: #F5F5EE; display: grid; gap: 10px; }
@@ -194,7 +195,6 @@ h1, h2, h3, h4 { font-weight: 750; }
   .pc--time > :not(.pc__ring) { grid-column: 1; }
   .pc--time .pc__ring { grid-column: 2; grid-row: 1 / span 4; align-self: center; margin: 0; }
   .pc--a, .pc--b { grid-column: span 1; }
-  .pc--b:last-child { grid-column: span 2; }
 }
 @media (max-width: 640px) {
   .pgrid { grid-template-columns: 1fr; gap: 12px; }

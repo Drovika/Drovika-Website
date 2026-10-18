@@ -1,4 +1,4 @@
-import { Clock, Camera, IndianRupee, RefreshCw, Timer, Award, CalendarX, Zap, Package, Truck } from 'lucide-react';
+import { Clock, Camera, IndianRupee, RefreshCw, Timer, Award, CalendarX, Zap, Package, Truck, MapPin } from 'lucide-react';
 import { site, vehicles, fmtMin } from '@/config/site';
 
 // "Fair on both sides" — customers and drivers both read this page, so every rule shows
@@ -81,6 +81,12 @@ export default function DrovikaPromise() {
             <span className="pc__ic"><IndianRupee size={20} /></span>
             <h3>One fare. No bargaining.</h3>
             <Two c="Pay exactly what the app showed when you booked." d="Earn exactly what the app showed before you accepted." />
+          </article>
+
+          <article className="pc pc--b rv" style={{ '--d': '.06s' }}>
+            <span className="pc__ic"><MapPin size={20} /></span>
+            <h3>Arrived means arrived</h3>
+            <Two c="Your loading time starts only when the driver has really reached your pickup. The app checks it by GPS." d="Phone GPS acting up? The customer's trip OTP confirms you're there, so you're never stuck." />
           </article>
 
           <article className="pc pc--b rv" style={{ '--d': '.1s' }}>
