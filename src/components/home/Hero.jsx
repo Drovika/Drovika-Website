@@ -27,7 +27,7 @@ export default function Hero() {
   const stats = [
     [`₹${fromPrice}`, 'starting fare'],
     [String(vehicles.length), 'vehicle sizes'],
-    [`Up to ${fmtMin(maxFreeMin)}`, 'loading time included'],
+    [`Up to ${fmtMin(maxFreeMin)}`, 'free loading time'],
     ['100%', 'verified drivers'],
   ];
 
@@ -71,7 +71,7 @@ export default function Hero() {
           </div>
           <div className="float float--b">
             <span className="float__ic float__ic--lime"><Timer size={18} /></span>
-            <div><b>{ace.freeMin} min loading time</b><small>included · {ace.freeMin} min to unload</small></div>
+            <div><b>{ace.freeMin} min free time</b><small>For loading + unloading</small></div>
           </div>
           <div className="float float--c">
             <span className="float__ic float__ic--ghost"><BadgeCheck size={18} /></span>

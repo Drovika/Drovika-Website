@@ -1,4 +1,4 @@
-import { Clock, Camera, IndianRupee, RefreshCw, Timer, Award, CalendarX, Zap, Package, Truck, MapPin } from 'lucide-react';
+import { Headphones, Camera, IndianRupee, RefreshCw, Timer, Award, CalendarX, Zap, Package, Truck, MapPin } from 'lucide-react';
 import { site, vehicles, fmtMin } from '@/config/site';
 
 // "Fair on both sides" — customers and drivers both read this page, so every rule shows
@@ -55,8 +55,8 @@ export default function DrovikaPromise() {
           <article className="pc pc--time rv" style={{ '--d': '.06s' }}>
             <span className="pc__ic"><Timer size={20} /></span>
             <h3>Loading time, <span className="it">agreed upfront</span></h3>
-            <p>From {ace.freeMin} min on a Tata Ace to {fmtMin(big.freeMin)} on a 19 ft truck, at pickup and again at the drop.
-              Both of you see the same timer.</p>
+            <p>From {ace.freeMin} min on a Tata Ace to {fmtMin(big.freeMin)} on a 19 ft truck, for loading and unloading together.
+              It pauses while driving, and both of you see the same timer.</p>
             <div className="pc__ring" aria-hidden="true">
               <svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="50" className="tr" /><circle cx="60" cy="60" r="50" className="fg" /></svg>
               <b>{ace.freeMin}<small>minutes</small></b>
@@ -65,10 +65,10 @@ export default function DrovikaPromise() {
           </article>
 
           <article className="pc pc--a rv" style={{ '--d': '.1s' }}>
-            <span className="pc__ic"><Clock size={20} /></span>
-            <h3>Running late? Ask, don&apos;t assume.</h3>
-            <Two c="Not ready yet? Ask your driver for a later pickup." d="Stuck in traffic? Ask the customer for more time." />
-            <p className="pc__foot">The new time is set only when the other person agrees.</p>
+            <span className="pc__ic"><Headphones size={20} /></span>
+            <h3>Help in one tap</h3>
+            <Two c="Something wrong on the trip? Tap Need help and Drovika calls you back." d="Problem at the pickup or drop? Tap Support on the trip screen and our team calls you." />
+            <p className="pc__foot">Our team sees every help request live, with the trip details.</p>
           </article>
 
           <article className="pc pc--a rv" style={{ '--d': '.14s' }}>
@@ -86,7 +86,7 @@ export default function DrovikaPromise() {
           <article className="pc pc--b rv" style={{ '--d': '.06s' }}>
             <span className="pc__ic"><MapPin size={20} /></span>
             <h3>Arrived means arrived</h3>
-            <Two c="Your loading time starts only when the driver has really reached your pickup. The app checks it by GPS." d="Phone GPS acting up? The customer's trip OTP confirms you're there, so you're never stuck." />
+            <Two c="Your loading time starts only when the driver has really reached your pickup. The app checks it by GPS." d="Within 1 km of the pickup, you can mark Arrived. Customer not there after 10 minutes? Cancel without a penalty." />
           </article>
 
           <article className="pc pc--b rv" style={{ '--d': '.1s' }}>

@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import { PackageOpen, PackageCheck, Info } from 'lucide-react';
+import { PackageOpen, PackageCheck, Truck, Info } from 'lucide-react';
 import VehicleArt from '../VehicleArt';
 import { vehicles, fmtMin } from '@/config/site';
 
@@ -36,8 +36,8 @@ export default function FreeTime() {
           <div className="ftime__head">
             <span className="eyebrow">Loading &amp; unloading time</span>
             <h2 className="h-section">Time that&apos;s clear <span className="it">to both of you.</span></h2>
-            <p className="lead">Every booking includes time to load at the pickup and the same time again to unload at the drop.
-              It is set by vehicle size, so the customer isn&apos;t rushed and the driver knows the job before it starts.</p>
+            <p className="lead">Every booking includes one free time for loading and unloading together, set by vehicle size.
+              It runs only while the vehicle is standing at the pickup or the drop, never while driving.</p>
           </div>
 
           <div className="ftime__pick" role="tablist" aria-label="Choose a vehicle">
@@ -55,14 +55,18 @@ export default function FreeTime() {
               <VehicleArt slug={v.slug} title={v.name} />
               <div><b>{v.name}</b><small>{v.capacity}</small></div>
             </div>
-            <Dial min={v.freeMin} tone="a" Icon={PackageOpen} label="Loading at pickup" sub="Starts when the driver reaches the pickup." />
-            <span className="ftime__plus" aria-hidden="true">+</span>
-            <Dial min={v.freeMin} tone="b" Icon={PackageCheck} label="Unloading at drop" sub="Starts again when the goods reach the drop." />
+            <Dial min={v.freeMin} tone="a" Icon={PackageOpen} label="Free time" sub="For loading and unloading together." />
+            <ol className="ftime__steps">
+              <li><span><PackageOpen size={16} /></span><div><b>Starts at the pickup</b><small>When the driver has really reached (checked by GPS).</small></div></li>
+              <li><span><Truck size={16} /></span><div><b>Pauses while driving</b><small>Time on the road is never counted.</small></div></li>
+              <li><span><PackageCheck size={16} /></span><div><b>Goes on at the drop</b><small>From where it stopped, until the goods are delivered.</small></div></li>
+            </ol>
           </div>
 
           <p className="ftime__note">
             <Info size={15} />
-            The customer and the driver see the same timer live in the app, so both know exactly where the time stands.
+            After the free time, a small per-minute waiting charge is added, and it goes fully to the driver.
+            The customer and the driver see the same timer live in the app.
           </p>
         </div>
       </div>

@@ -6,7 +6,7 @@ import { vehicles } from '@/config/site';
 const POINTS = [
   [ShieldCheck, 'Price before you book', 'Set pickup and drop in the app and see one clear price for every vehicle.'],
   [HandCoins, 'No bargaining, ever', 'The price you confirm is the price you pay — no haggling at the gate.'],
-  [Wallet, 'Pay after delivery', 'Cash to the driver or UPI in the app, once your goods arrive.'],
+  [Wallet, 'Cash or Wallet', 'Cash or UPI to the driver after delivery, or pay from your Drovika Wallet.'],
 ];
 
 const SHOW = ['three_wheeler', 'tata_ace', 'pickup', 'tata_407', 'truck'];

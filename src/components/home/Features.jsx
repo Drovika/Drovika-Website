@@ -52,9 +52,9 @@ export default function Features() {
 
           <article className="bx bx--pay rv" style={{ '--d': '.2s' }}>
             <span className="bx__ic"><Wallet size={22} /></span>
-            <h3>Cash or UPI</h3>
-            <p>Pay the driver in cash, or online in the app with UPI, cards or netbanking — secured by Razorpay.</p>
-            <div className="bx__pills"><span>UPI</span><span>Cash</span><span>Cards</span></div>
+            <h3>Cash or Drovika Wallet</h3>
+            <p>Pay the driver in cash or UPI after delivery, or pay from your Drovika Wallet. Add money once with UPI or card, secured by Razorpay.</p>
+            <div className="bx__pills"><span>Cash</span><span>UPI to driver</span><span>Wallet</span></div>
           </article>
 
           <article className="bx bx--lang rv" style={{ '--d': '.24s' }}>
@@ -67,7 +67,7 @@ export default function Features() {
           <article className="bx bx--help rv" style={{ '--d': '.28s' }}>
             <span className="bx__ic"><Headphones size={22} /></span>
             <h3>Real humans on support</h3>
-            <p>Stuck with something? Call or WhatsApp us — we pick up.</p>
+            <p>Tap Need help during a trip and we call you back. Or call or WhatsApp us — we pick up.</p>
           </article>
 
           <article className="bx bx--alerts rv" style={{ '--d': '.32s' }}>

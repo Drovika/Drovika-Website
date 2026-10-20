@@ -21,7 +21,7 @@ const STEPS = [
     ),
   },
   {
-    Icon: PackageCheck, t: 'Track it live, pay your way', d: 'A verified driver arrives, starts with your OTP, and you watch every turn until delivery. Pay cash or UPI.',
+    Icon: PackageCheck, t: 'Track it live, pay your way', d: 'A verified driver arrives, starts with your OTP, and you watch every turn until delivery. Pay cash, UPI or Drovika Wallet.',
     ui: (
       <div className="hw-ui hw-ui--otp">
         <small>Pickup · OTP verified</small>

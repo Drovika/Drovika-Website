@@ -9,7 +9,7 @@ const CARDS = [
   },
   {
     Icon: Store, tag: 'For businesses', t: 'Daily deliveries for shops & SMEs.',
-    list: ['Stock from wholesale markets', 'Deliveries to your customers', 'Saved addresses for repeat trips'],
+    list: ['Stock from wholesale markets', 'Deliveries to your customers', 'Drovika Wallet: add money once, pay every trip from it'],
     cta: 'Talk to us', href: '/contact/',
   },
 ];

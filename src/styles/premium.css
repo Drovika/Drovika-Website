@@ -256,7 +256,7 @@ h1, h2, h3, h4 { font-weight: 750; }
 .ftime__pick .is-on small { color: var(--green); opacity: 1; }
 
 .ftime__show {
-  display: grid; grid-template-columns: 1.1fr 1fr auto 1fr; align-items: center; gap: 24px;
+  display: grid; grid-template-columns: 1fr 1.05fr 1.3fr; align-items: center; gap: 24px;
   padding: 26px; border-radius: 26px; background: rgba(255, 255, 255, .05); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .08);
 }
 .ftime__veh { display: flex; flex-direction: column; gap: 14px; }
@@ -282,6 +282,13 @@ h1, h2, h3, h4 { font-weight: 750; }
 .dial--b .dial__txt svg { color: #7FD3A5; }
 .dial__txt p { font-size: 13.5px; color: rgba(236, 244, 232, .6); margin-top: 4px; line-height: 1.45; }
 
+.ftime__steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; position: relative; }
+.ftime__steps li { display: flex; gap: 12px; align-items: flex-start; position: relative; }
+.ftime__steps li:not(:last-child)::after { content: ''; position: absolute; left: 15px; top: 34px; bottom: -12px; width: 2px; background: rgba(255, 255, 255, .12); }
+.ftime__steps li > span { width: 32px; height: 32px; border-radius: 50%; flex: none; display: grid; place-items: center; background: rgba(205, 238, 108, .14); color: var(--lime); }
+.ftime__steps li:nth-child(2) > span { background: rgba(255, 255, 255, .08); color: rgba(236, 244, 232, .7); }
+.ftime__steps b { display: block; font-size: 15px; font-weight: 750; letter-spacing: -.01em; color: #F4F7EE; }
+.ftime__steps small { display: block; font-size: 13.5px; color: rgba(236, 244, 232, .6); line-height: 1.45; margin-top: 2px; }
 .ftime__note { margin-top: 22px; display: flex; align-items: flex-start; gap: 8px; font-size: 14px; color: rgba(236, 244, 232, .65); }
 .ftime__note svg { flex: none; margin-top: 3px; color: var(--lime); }
 

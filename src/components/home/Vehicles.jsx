@@ -34,7 +34,7 @@ export default function Vehicles() {
                   <span><Weight size={15} /> {v.capacity.replace('Upto ', '')}</span>
                   <span><Ruler size={15} /> {v.size} <em>approx.</em></span>
                 </div>
-                <div className="vcard__free"><Timer size={15} /><span><b>{fmtMin(v.freeMin)}</b> loading <i>+</i> <b>{fmtMin(v.freeMin)}</b> unloading included</span></div>
+                <div className="vcard__free"><Timer size={15} /><span><b>{fmtMin(v.freeMin)}</b> free for loading <i>+</i> unloading</span></div>
                 <ul className="vcard__list">
                   {v.bestFor.map((b) => <li key={b}><Check size={15} />{b}</li>)}
                 </ul>
