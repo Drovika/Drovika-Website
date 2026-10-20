@@ -50,6 +50,7 @@ export default function Footer() {
           <nav>
             <Link href="/privacy/">Privacy</Link>
             <Link href="/terms/">Terms</Link>
+            <Link href="/refund/">Refund &amp; cancellation</Link>
             <Link href="/delete-account/">Delete account</Link>
             {SOCIAL.map(([k, l]) => <a key={k} href={site[k]} target="_blank" rel="noopener noreferrer">{l}</a>)}
           </nav>

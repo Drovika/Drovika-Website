@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Legal from '@/components/Legal';
 import { site } from '@/config/site';
 
@@ -13,15 +14,17 @@ export default function Terms() {
       <ul>
         <li>Give correct pickup, drop and contact details, and describe your goods honestly.</li>
         <li>Do not send illegal, dangerous, or prohibited goods (for example explosives, drugs, weapons, or anything banned by law).</li>
-        <li>The fare shown before booking is an estimate. Waiting beyond the free time, tolls and parking may be added.</li>
-        <li>Pay the fare in cash to the driver or online in the app after delivery.</li>
-        <li>Cancelling after a driver is on the way may be charged in future; any such charge will be shown in the app first.</li>
+        <li>The fare shown before booking includes tolls. Each vehicle has free waiting time for loading and unloading; after that, a per-minute waiting charge is added.</li>
+        <li>Pay in one of two ways: <b>Cash</b> (cash or UPI paid straight to the driver after delivery) or <b>Drovika Wallet</b> (money added in the app; the fare is taken from it when you book).</li>
+        <li>You can cancel free of charge before the trip starts. If you are not at the pickup, the driver may cancel after waiting; you will be asked in the app whether you were there, and repeated cases are checked by our team.</li>
+        <li>Refunds and Drovika Wallet rules are explained in our <Link href="/refund/">Refund and cancellation policy</Link>.</li>
       </ul>
       <h2>Drivers</h2>
       <ul>
         <li>Keep your licence, vehicle papers, permits and insurance valid, and follow traffic laws.</li>
         <li>Handle goods with care and deliver them to the drop location shown in the app.</li>
         <li>Drovika keeps a commission on each trip, shown in the app. Commission on cash trips must be paid to Drovika; accounts with large unpaid dues stop receiving trips.</li>
+        <li>Cancelling trips after accepting them affects your cancellation score. Repeated cancellations without a valid reason can pause new trips for some time; the reason and time are shown in the app.</li>
         <li>Drovika may block accounts for fake documents, misbehaviour, fraud or repeated complaints.</li>
       </ul>
       <h2>Liability</h2>

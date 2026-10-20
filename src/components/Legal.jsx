@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-export const UPDATED = '12 October 2026';
+export const UPDATED = '20 October 2026';
 
 export default function Legal({ title, children, current }) {
   return (
@@ -10,6 +10,7 @@ export default function Legal({ title, children, current }) {
           <span>Legal</span>
           <Link href="/privacy/" className={current === 'privacy' ? 'is-on' : ''}>Privacy policy</Link>
           <Link href="/terms/" className={current === 'terms' ? 'is-on' : ''}>Terms of use</Link>
+          <Link href="/refund/" className={current === 'refund' ? 'is-on' : ''}>Refund &amp; cancellation</Link>
           <Link href="/delete-account/" className={current === 'delete' ? 'is-on' : ''}>Delete account</Link>
         </aside>
         <article className="legal__doc">
