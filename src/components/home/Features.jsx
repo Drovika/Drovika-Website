@@ -53,8 +53,8 @@ export default function Features() {
           <article className="bx bx--pay rv" style={{ '--d': '.2s' }}>
             <span className="bx__ic"><Wallet size={22} /></span>
             <h3>Cash or Drovika Wallet</h3>
-            <p>Pay the driver in cash or UPI after delivery, or pay from your Drovika Wallet. Add money once with UPI or card, secured by Razorpay.</p>
-            <div className="bx__pills"><span>Cash</span><span>UPI to driver</span><span>Wallet</span></div>
+            <p><b>Cash:</b> pay the driver after delivery, in cash or by UPI, as you like. <b>Wallet:</b> add money once with UPI or card, secured by Razorpay, and pay every trip from it.</p>
+            <div className="bx__pills"><span>Cash</span><span>Wallet</span></div>
           </article>
 
           <article className="bx bx--lang rv" style={{ '--d': '.24s' }}>

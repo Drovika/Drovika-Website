@@ -78,6 +78,10 @@ const jsonLd = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en-IN">
+      <head>
+        {/* Opened from the Drovika app (?app=1): the app shows its own header, so the site header and footer hide */}
+        <script dangerouslySetInnerHTML={{ __html: "if(/[?&]app=1/.test(location.search))document.documentElement.classList.add('in-app')" }} />
+      </head>
       <body>
         <a href="#main" className="skip">Skip to content</a>
         <Header />

@@ -302,7 +302,7 @@
 .bx__otp i:nth-child(2) { animation-delay: .15s; } .bx__otp i:nth-child(3) { animation-delay: .3s; } .bx__otp i:nth-child(4) { animation-delay: .45s; }
 @keyframes otp { 0%, 60%, 100% { transform: none; } 30% { transform: translateY(-6px); } }
 .bx__pills { display: flex; gap: 8px; margin-top: 16px; }
-.bx__pills span { padding: 5px 14px; border-radius: 999px; border: 1.5px solid var(--border); font-weight: 700; font-size: 13.5px; color: var(--green); }
+.bx__pills span { white-space: nowrap; padding: 5px 14px; border-radius: 999px; border: 1.5px solid var(--border); font-weight: 700; font-size: 13.5px; color: var(--green); }
 .bx--lang { overflow: hidden; }
 .bx__hi { position: absolute; right: 16px; bottom: -14px; font-family: var(--display); font-weight: 700; font-size: 56px; color: var(--lime-tint); line-height: 1; pointer-events: none; }
 .bx--lang > *:not(.bx__hi) { position: relative; }
