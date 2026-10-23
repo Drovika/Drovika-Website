@@ -4,8 +4,8 @@
    film grain on dark areas, and the new Promise and Free time sections.
    ═══════════════════════════════════════════════════════════════════════════ */
 :root {
-  --display: 'Plus Jakarta Sans Variable', 'Plus Jakarta Sans', system-ui, sans-serif;
-  --body: 'Plus Jakarta Sans Variable', 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --display: 'Plus Jakarta Sans Variable', 'Plus Jakarta Sans', 'Noto Sans Devanagari', system-ui, sans-serif;
+  --body: 'Plus Jakarta Sans Variable', 'Plus Jakarta Sans', 'Noto Sans Devanagari', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --serif: 'Instrument Serif', Georgia, 'Times New Roman', serif;
   --paper: #FAF9F4;
   --bg: #F3F2EA;
@@ -447,3 +447,31 @@ html.in-app .legal__lang { display: none; }
   :lang(hi) .h-display, :lang(mr) .h-display { font-size: clamp(30px, 8.6vw, 40px); }
   :lang(hi) .h-section, :lang(mr) .h-section { font-size: clamp(25px, 7vw, 32px); }
 }
+
+/* ---------- Header language button (icon + current language) ---------- */
+.lmenu__btn { height: 40px; padding: 0 10px 0 11px; gap: 6px; font: inherit; background: #fff; box-shadow: 0 0 0 1px rgba(6, 33, 15, .1), 0 4px 12px -6px rgba(6, 33, 15, .18); }
+.lmenu__btn:hover, .lmenu.is-open .lmenu__btn { background: #fff; box-shadow: 0 0 0 1.5px var(--green), 0 6px 16px -8px rgba(6, 33, 15, .3); }
+.lmenu__ic { opacity: .85; }
+.lmenu__cur { font-size: 13.5px; font-weight: 800; letter-spacing: .02em; min-width: 22px; text-align: center; line-height: 1; }
+.lmenu--light .lmenu__btn { background: rgba(255, 255, 255, .08); color: #fff; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .22); }
+.lmenu--light .lmenu__btn:hover, .lmenu--light.is-open .lmenu__btn { background: rgba(255, 255, 255, .16); box-shadow: inset 0 0 0 1px rgba(198, 230, 107, .6); }
+.lmenu__list { width: 248px; padding: 8px; border-radius: 20px; top: calc(100% + 12px); }
+.lmenu__list::before { content: ''; position: absolute; top: -6px; right: 22px; width: 12px; height: 12px; background: #fff; transform: rotate(45deg); border-radius: 3px 0 0 0; box-shadow: -1px -1px 0 rgba(6, 33, 15, .06); }
+.lmenu__head { padding: 8px 10px 8px; font-size: 11px; letter-spacing: .08em; }
+.lmenu__list a { justify-content: flex-start; gap: 12px; padding: 9px 10px; border-radius: 14px; transition: background .15s; }
+.lmenu__list a:hover { background: #F3F6EE; }
+.lmenu__list a.is-on { background: #EEF6D9; }
+.lmenu__glyph { flex: none; width: 36px; height: 36px; border-radius: 11px; display: grid; place-items: center; font-style: normal; font-weight: 800; font-size: 17px; background: #F1F4EC; color: var(--green); }
+.lmenu__list a.is-on .lmenu__glyph { background: var(--green); color: var(--lime); }
+.lmenu__txt { flex: 1; min-width: 0; }
+.lmenu__list a b { font-size: 15.5px; line-height: 1.35; }
+.lmenu__list a small { font-size: 11.5px; line-height: 1.3; }
+.lmenu__tick { flex: none; width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; }
+.lmenu__list a.is-on .lmenu__tick { background: var(--green); }
+.lmenu__list a.is-on .lmenu__tick svg { color: #fff; }
+
+/* Header stays readable over any content while scrolling (also where blur is switched off) */
+.hdr--solid { background: rgba(250, 249, 244, .95); }
+
+/* Big "Drovika" in the footer: room on top so the dot of the i is not cut */
+.ftr__giant { line-height: 1; padding-top: .12em; margin-top: -0.3em; }

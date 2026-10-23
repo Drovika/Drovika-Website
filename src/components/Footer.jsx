@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { LangCards, splitPath } from './LangSwitch';
+import { splitPath } from './LangSwitch';
 import { pick, lp } from '@/lib/i18n';
 import { Mail, MapPin, Phone, Clock } from 'lucide-react';
 import { Logo } from './BrandMark';
@@ -76,7 +76,6 @@ export default function Footer() {
             <span><MapPin size={16} /> {site.address}</span>
           </div>
         </div>
-        <div className="ftr__lang"><span>Language · भाषा</span><LangCards dark /></div>
         <div className="ftr__bottom">
           <span>© {year} {site.name}. {t.rights}{site.udyam ? t.msme : ''}</span>
           <nav>

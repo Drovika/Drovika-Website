@@ -1,10 +1,6 @@
 import '@fontsource/baloo-2/800.css';
 import '@fontsource-variable/plus-jakarta-sans';
 import '@fontsource/instrument-serif/400-italic.css';
-// Hindi & Marathi letters (only downloaded on pages that show Devanagari text)
-import '@fontsource/noto-sans-devanagari/devanagari-400.css';
-import '@fontsource/noto-sans-devanagari/devanagari-600.css';
-import '@fontsource/noto-sans-devanagari/devanagari-700.css';
 import '@/styles/base.css';
 import '@/styles/home.css';
 import '@/styles/pages.css';
@@ -13,6 +9,7 @@ import '@/styles/premium.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Reveal from '@/components/Reveal';
+import { HtmlLang } from '@/components/LangSwitch';
 import { fromPrice, site } from '@/config/site';
 
 export const metadata = {
@@ -81,12 +78,13 @@ const jsonLd = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en-IN">
+    <html lang="en-IN" suppressHydrationWarning>
       <head>
         {/* Opened from the Drovika app (?app=1): the app shows its own header, so the site header and footer hide */}
         <script dangerouslySetInnerHTML={{ __html: "if(/[?&]app=1/.test(location.search))document.documentElement.classList.add('in-app')" }} />
         {/* Hindi and Marathi pages live under /hi/ and /mr/: tell the browser (and screen readers) which language the page is in */}
-        <script dangerouslySetInnerHTML={{ __html: "var m=location.pathname.match(/^\\/(hi|mr)(\\/|$)/);if(m)document.documentElement.lang=m[1]+'-IN'" }} />
+        {/* and start loading the Hindi/Marathi font straight away, so the page never shows the wrong font first */}
+        <script dangerouslySetInnerHTML={{ __html: "var m=location.pathname.match(/^\\/(hi|mr)(\\/|$)/);if(m){document.documentElement.lang=m[1]+'-IN';[400,600,700].forEach(function(w){var l=document.createElement('link');l.rel='preload';l.as='font';l.type='font/woff2';l.crossOrigin='anonymous';l.href='/fonts/noto-deva-'+w+'.woff2';document.head.appendChild(l)})}" }} />
       </head>
       <body>
         <a href="#main" className="skip">Skip to content</a>
@@ -94,6 +92,7 @@ export default function RootLayout({ children }) {
         <main id="main">{children}</main>
         <Footer />
         <Reveal />
+        <HtmlLang />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </body>
     </html>
