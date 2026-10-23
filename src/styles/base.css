@@ -18,9 +18,9 @@
   --card: #FFFFFF;
   --border: #E2E7DC;
 
-  --display: 'Plus Jakarta Sans Variable', system-ui, sans-serif;
+  --display: 'Plus Jakarta Sans Variable', 'Noto Sans Devanagari', system-ui, sans-serif;
   --brand: 'Baloo 2', system-ui, sans-serif;
-  --body: 'Plus Jakarta Sans Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --body: 'Plus Jakarta Sans Variable', 'Noto Sans Devanagari', system-ui, -apple-system, 'Segoe UI', sans-serif;
 
   --r-sm: 10px;
   --r-md: 16px;

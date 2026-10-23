@@ -1,6 +1,10 @@
 import '@fontsource/baloo-2/800.css';
 import '@fontsource-variable/plus-jakarta-sans';
 import '@fontsource/instrument-serif/400-italic.css';
+// Hindi & Marathi letters (only downloaded on pages that show Devanagari text)
+import '@fontsource/noto-sans-devanagari/devanagari-400.css';
+import '@fontsource/noto-sans-devanagari/devanagari-600.css';
+import '@fontsource/noto-sans-devanagari/devanagari-700.css';
 import '@/styles/base.css';
 import '@/styles/home.css';
 import '@/styles/pages.css';
