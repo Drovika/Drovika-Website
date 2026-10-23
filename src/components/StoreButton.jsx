@@ -12,14 +12,16 @@ export function PlayIcon({ size = 22 }) {
   );
 }
 
-export default function StoreButton({ app = 'customer', dark = true, label }) {
+const TOP = { en: ['GET IT ON', 'COMING SOON ON'], hi: ['अभी पाएँ', 'जल्द आ रहा है'], mr: ['आत्ता मिळवा', 'लवकरच येत आहे'] };
+
+export default function StoreButton({ app = 'customer', dark = true, label, lang = 'en' }) {
   const href = app === 'partner' ? site.partnerApp : site.customerApp;
   const live = site.appsLive;
-  const top = live ? 'GET IT ON' : 'COMING SOON ON';
+  const top = (TOP[lang] || TOP.en)[live ? 0 : 1];
   return (
     <a
       className={`store ${dark ? 'store--dark' : 'store--light'}`}
-      href={live ? href : '/#download'}
+      href={live ? href : `${lang === 'en' ? '' : `/${lang}`}/#download`}
       target={live ? '_blank' : undefined}
       rel={live ? 'noopener noreferrer' : undefined}
       aria-label={`${label || (app === 'partner' ? 'Drovika Partner' : 'Drovika')} on Google Play`}

@@ -414,3 +414,14 @@ h1, h2, h3, h4 { font-weight: 750; }
   .agrp { padding: 18px; border-radius: 20px; }
   .agrp li { font-size: 12.5px; padding: 5px 10px 5px 8px; }
 }
+
+/* ---------- Hindi & Marathi pages ---------- */
+/* The italic display font has no Devanagari letters, so highlighted words keep the normal font, just coloured */
+:lang(hi) .it, :lang(mr) .it, .it--plain { font-family: inherit; font-style: normal; letter-spacing: -0.01em; }
+:lang(hi) .h-display, :lang(mr) .h-display, :lang(hi) .h-section, :lang(mr) .h-section { line-height: 1.22; letter-spacing: -0.01em; }
+:lang(hi) body, :lang(mr) body { word-break: normal; overflow-wrap: anywhere; }
+.legal__lang { font-size: .86rem; color: var(--muted, #5b6b62); background: #F2F6EE; border-radius: 10px; padding: 8px 12px; margin: -4px 0 18px; }
+html.in-app .legal__lang { display: none; }
+/* Wide letter-spacing breaks Devanagari letters apart */
+:lang(hi) .eyebrow, :lang(mr) .eyebrow, :lang(hi) .lmenu__head, :lang(mr) .lmenu__head { letter-spacing: .03em; }
+:lang(hi) .btn, :lang(mr) .btn, :lang(hi) .hdr__nav a, :lang(mr) .hdr__nav a { letter-spacing: 0; }

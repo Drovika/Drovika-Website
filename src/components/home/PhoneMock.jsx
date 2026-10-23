@@ -1,11 +1,18 @@
 import { Phone, Star, ShieldCheck, Navigation } from 'lucide-react';
+import { pick } from '@/lib/i18n';
 
 // The Drovika app on a phone — drawn in code, so it is sharp and animated.
+const T = {
+  en: { aria: 'Drovika app showing a live trip', pickup: 'Pickup', drop: 'Drop', onWay: 'Driver on the way', arriving: 'Arriving in 6 min', fixed: 'Fixed fare', otp: 'Start OTP' },
+  hi: { aria: 'Drovika ऐप में लाइव ट्रिप', pickup: 'पिकअप', drop: 'ड्रॉप', onWay: 'ड्राइवर रास्ते में', arriving: '6 मिनट में पहुँचेगा', fixed: 'तय किराया', otp: 'स्टार्ट OTP' },
+  mr: { aria: 'Drovika ॲपमध्ये लाइव्ह ट्रिप', pickup: 'पिकअप', drop: 'ड्रॉप', onWay: 'ड्रायव्हर वाटेत', arriving: '6 मिनिटांत पोहोचेल', fixed: 'ठरलेले भाडे', otp: 'स्टार्ट OTP' },
+};
 const ROUTE = 'M70 300 C 70 262, 118 252, 128 226 S 118 178, 168 168 S 230 172, 232 150';
 
-export default function PhoneMock() {
+export default function PhoneMock({ lang = 'en' }) {
+  const t = pick(T, lang);
   return (
-    <div className="phone" aria-label="Drovika app showing a live trip">
+    <div className="phone" aria-label={t.aria}>
       <div className="phone__screen">
         <div className="phone__status"><b>9:41</b><span className="phone__island" /><span className="phone__sig"><i /><i /><i /><i /></span></div>
         <div className="phone__map">
@@ -42,15 +49,15 @@ export default function PhoneMock() {
             </g>
           </svg>
           <div className="phone__trip">
-            <div><i className="dot dot--p" /><span><small>Pickup</small>Andheri East</span></div>
-            <div><i className="dot dot--d" /><span><small>Drop</small>Bandra West</span></div>
+            <div><i className="dot dot--p" /><span><small>{t.pickup}</small>Andheri East</span></div>
+            <div><i className="dot dot--d" /><span><small>{t.drop}</small>Bandra West</span></div>
           </div>
           <div className="phone__locate"><Navigation size={15} /></div>
         </div>
         <div className="phone__sheet">
           <div className="phone__grab" />
           <div className="phone__eta">
-            <div><small>Driver on the way</small><b>Arriving in 6 min</b></div>
+            <div><small>{t.onWay}</small><b>{t.arriving}</b></div>
             <span className="phone__live"><i />LIVE</span>
           </div>
           <div className="phone__bar"><i /></div>
@@ -63,8 +70,8 @@ export default function PhoneMock() {
             <span className="phone__icon phone__icon--call"><Phone size={16} /></span>
           </div>
           <div className="phone__foot">
-            <div><small>Fixed fare</small><b>₹426</b></div>
-            <div className="phone__otp"><small><ShieldCheck size={11} /> Start OTP</small><span><i>4</i><i>8</i><i>2</i><i>1</i></span></div>
+            <div><small>{t.fixed}</small><b>₹426</b></div>
+            <div className="phone__otp"><small><ShieldCheck size={11} /> {t.otp}</small><span><i>4</i><i>8</i><i>2</i><i>1</i></span></div>
           </div>
         </div>
       </div>

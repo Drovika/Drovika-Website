@@ -69,7 +69,7 @@ const jsonLd = {
       address: { '@type': 'PostalAddress', addressLocality: 'Mumbai', addressRegion: 'Maharashtra', addressCountry: 'IN' },
       openingHours: 'Mo-Su 08:00-22:00',
       priceRange: `From ₹${fromPrice}`,
-      contactPoint: [{ '@type': 'ContactPoint', contactType: 'customer support', telephone: site.phone, email: site.email, areaServed: 'IN', availableLanguage: ['English', 'Hindi'] }],
+      contactPoint: [{ '@type': 'ContactPoint', contactType: 'customer support', telephone: site.phone, email: site.email, areaServed: 'IN', availableLanguage: ['English', 'Hindi', 'Marathi'] }],
       ...(sameAs.length ? { sameAs } : {}),
     },
   ],
@@ -81,6 +81,8 @@ export default function RootLayout({ children }) {
       <head>
         {/* Opened from the Drovika app (?app=1): the app shows its own header, so the site header and footer hide */}
         <script dangerouslySetInnerHTML={{ __html: "if(/[?&]app=1/.test(location.search))document.documentElement.classList.add('in-app')" }} />
+        {/* Hindi and Marathi pages live under /hi/ and /mr/: tell the browser (and screen readers) which language the page is in */}
+        <script dangerouslySetInnerHTML={{ __html: "var m=location.pathname.match(/^\\/(hi|mr)(\\/|$)/);if(m)document.documentElement.lang=m[1]+'-IN'" }} />
       </head>
       <body>
         <a href="#main" className="skip">Skip to content</a>

@@ -16,6 +16,7 @@ export default function Legal({ title, children, current }) {
         <article className="legal__doc">
           <h1>{title}</h1>
           <p className="legal__date">Last updated: {UPDATED}</p>
+          <p className="legal__lang" lang="hi">This page is in English only. · यह पेज सिर्फ़ अंग्रेज़ी में है। · <span lang="mr">हे पान फक्त इंग्रजीत आहे.</span></p>
           {children}
         </article>
       </div>
