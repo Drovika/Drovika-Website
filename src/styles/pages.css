@@ -213,3 +213,52 @@ html.in-app .legal__doc p, html.in-app .legal__doc li { line-height: 1.6; }
 .offer__knob { position: absolute; left: 5px; top: 5px; width: 46px; height: 46px; border-radius: 50%; background: var(--lime); color: var(--green-ink); display: grid; place-items: center; animation: knob 2.6s ease-in-out infinite; }
 @keyframes knob { 0%, 20% { transform: none; } 60%, 75% { transform: translateX(46px); } 100% { transform: none; } }
 @media (max-width: 960px) { .offer { justify-self: center; } }
+
+/* ── Service pages (House shifting, Business delivery) ── */
+.svc__hero-btns { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-top: 28px; }
+.svc__hero-btns .btn { height: 52px; }
+.svc--soft { background: var(--paper); }
+.svc__veh { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.svc__vcard { position: relative; background: #fff; border: 1px solid var(--border); border-radius: var(--r-lg); padding: 18px; display: flex; flex-direction: column; gap: 12px; }
+.svc__art { height: 150px; border-radius: var(--r-md); background: radial-gradient(120% 90% at 50% 100%, #EAF3D2, #F8F8F1 70%); display: flex; align-items: center; justify-content: center; padding: 10px 18px; }
+.svc__art svg { width: 100%; height: 100%; }
+.svc__vtop { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+.svc__vtop h3 { font-size: 21px; font-weight: 800; color: var(--green); }
+.svc__price { font-weight: 800; font-size: 20px; color: var(--green-ink); white-space: nowrap; }
+.svc__price small { font-size: 12.5px; font-weight: 600; color: var(--muted); }
+.svc__meta { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 14px; color: var(--muted); }
+.svc__meta span { display: inline-flex; align-items: center; gap: 6px; }
+.svc__faq { max-width: 820px; }
+.svc__faq .h-section { margin-bottom: 22px; }
+@media (max-width: 860px) {
+  .svc__veh, .svc__uses { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .svc__vcard { padding: 12px; gap: 8px; border-radius: 18px; }
+  .svc__art { height: 92px; padding: 6px 10px; }
+  .svc__vtop { flex-direction: column; align-items: flex-start; gap: 4px; }
+  .svc__vtop h3 { font-size: 16px; }
+  .svc__price { font-size: 17px; }
+  .svc__meta { flex-direction: column; gap: 4px; font-size: 12.5px; }
+  .svc__use { padding: 16px 14px; border-radius: 18px; }
+  .svc__use h3 { font-size: 17px; margin: 12px 0 6px; }
+  .svc__use p { font-size: 13.5px; }
+  .svc__hero-btns .btn { height: 48px; }
+}
+.areas2__more { display: inline-flex; margin-top: 22px; }
+.svc__crumbs { display: flex; align-items: center; gap: 6px; margin-top: 26px; font-size: 13.5px; color: var(--muted); }
+.svc__crumbs a { color: var(--green); font-weight: 600; }
+.svc__crumbs svg { opacity: .5; }
+.svc__vtop small { display: block; font-size: 13px; color: var(--muted); margin-top: 2px; }
+.svc__also { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 30px; font-size: 14.5px; color: var(--muted); }
+.svc__chip { display: inline-flex; align-items: center; gap: 6px; padding: 9px 16px; border-radius: 999px; background: #fff; border: 1px solid var(--border); color: var(--green); font-weight: 700; transition: border-color .25s, transform .25s; }
+.svc__chip:hover { border-color: var(--green); transform: translateY(-2px); }
+.areas2--compact { padding-top: clamp(32px, 4vw, 56px); }
+.areas2--compact .areas2__top { align-items: center; }
+
+.svc__uses { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.svc__use { background: #fff; border: 1px solid var(--border); border-radius: var(--r-lg); padding: 26px; display: flex; flex-direction: column; transition: transform .4s var(--ease), box-shadow .4s var(--ease); }
+.svc__use:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+.svc__use h3 { font-size: 21px; font-weight: 700; color: var(--green); margin: 16px 0 8px; }
+.svc__use p { color: var(--muted); font-size: 15.5px; }
+.svc__fits { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; padding-top: 16px; }
+.svc__fits span { font-size: 12.5px; font-weight: 600; color: var(--green); background: var(--lime-tint); border-radius: 999px; padding: 4px 10px; }
+@media (max-width: 560px) { .svc__uses { grid-template-columns: 1fr; } }

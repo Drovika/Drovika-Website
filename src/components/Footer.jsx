@@ -16,21 +16,21 @@ const T = {
   en: {
     about: 'Mini trucks, pickups, tempos and trucks for anything you need moved across Mumbai — booked in a minute, tracked live, priced up front.',
     company: 'Company', aboutUs: 'About us', drive: 'Drive with Drovika', contact: 'Contact', faq: 'FAQs',
-    services: 'Services', s1: 'Mini truck on rent', s2: 'House shifting', s3: 'Shop & business deliveries', s4: 'Safety & security', s5: 'Pricing',
+    services: 'Services', s1: 'Mini truck on rent', s2: 'House shifting', s3: 'Shop & business deliveries', s4: 'Safety & security', s5: 'Pricing', s6: 'Areas we serve',
     reach: 'Reach us', wa: 'WhatsApp us', rights: 'All rights reserved.', msme: ' · Udyam registered MSME',
     privacy: 'Privacy', terms: 'Terms', refund: 'Refund & cancellation', del: 'Delete account', hours: null,
   },
   hi: {
     about: 'मुंबई में कुछ भी शिफ़्ट करना हो — मिनी ट्रक, पिकअप, टेम्पो और ट्रक। एक मिनट में बुकिंग, लाइव ट्रैकिंग, पहले से तय किराया।',
     company: 'कंपनी', aboutUs: 'हमारे बारे में', drive: 'Drovika के साथ ड्राइव करें', contact: 'संपर्क', faq: 'सवाल-जवाब',
-    services: 'सेवाएँ', s1: 'किराए पर मिनी ट्रक', s2: 'घर की शिफ़्टिंग', s3: 'दुकान और बिज़नेस डिलीवरी', s4: 'सुरक्षा और भरोसा', s5: 'किराया',
+    services: 'सेवाएँ', s1: 'किराए पर मिनी ट्रक', s2: 'घर की शिफ़्टिंग', s3: 'दुकान और बिज़नेस डिलीवरी', s4: 'सुरक्षा और भरोसा', s5: 'किराया', s6: 'हमारे एरिया',
     reach: 'हमसे संपर्क करें', wa: 'WhatsApp करें', rights: 'सर्वाधिकार सुरक्षित।', msme: ' · उद्यम रजिस्टर्ड MSME',
     privacy: 'Privacy', terms: 'Terms', refund: 'Refund & cancellation', del: 'Delete account', hours: 'हर दिन, सुबह 8 से रात 10 बजे तक',
   },
   mr: {
     about: 'मुंबईत काहीही हलवायचे असो — मिनी ट्रक, पिकअप, टेम्पो आणि ट्रक. एका मिनिटात बुकिंग, लाइव्ह ट्रॅकिंग, आधीच ठरलेले भाडे.',
     company: 'कंपनी', aboutUs: 'आमच्याबद्दल', drive: 'Drovika सोबत ड्राइव्ह करा', contact: 'संपर्क', faq: 'प्रश्नोत्तरे',
-    services: 'सेवा', s1: 'भाड्याने मिनी ट्रक', s2: 'घराची शिफ्टिंग', s3: 'दुकान आणि व्यवसाय डिलिव्हरी', s4: 'सुरक्षा आणि विश्वास', s5: 'भाडे',
+    services: 'सेवा', s1: 'भाड्याने मिनी ट्रक', s2: 'घराची शिफ्टिंग', s3: 'दुकान आणि व्यवसाय डिलिव्हरी', s4: 'सुरक्षा आणि विश्वास', s5: 'भाडे', s6: 'आमचे एरिया',
     reach: 'आमच्याशी संपर्क', wa: 'WhatsApp करा', rights: 'सर्व हक्क राखीव.', msme: ' · उद्यम नोंदणीकृत MSME',
     privacy: 'Privacy', terms: 'Terms', refund: 'Refund & cancellation', del: 'Delete account', hours: 'दररोज, सकाळी 8 ते रात्री 10',
   },
@@ -61,9 +61,10 @@ export default function Footer() {
           </div>
           <div className="ftr__col">
             <h4>{t.services}</h4>
-            <Link href={L('/#vehicles')}>{t.s1}</Link>
-            <Link href={L('/#vehicles')}>{t.s2}</Link>
-            <Link href={L('/#vehicles')}>{t.s3}</Link>
+            <Link href={L('/services/')}>{t.s1}</Link>
+            <Link href={L('/services/#uses')}>{t.s2}</Link>
+            <Link href={L('/services/#uses')}>{t.s3}</Link>
+            <Link href={L('/areas/')}>{t.s6}</Link>
             <Link href={L('/#safety')}>{t.s4}</Link>
             <Link href={L('/#fare')}>{t.s5}</Link>
           </div>

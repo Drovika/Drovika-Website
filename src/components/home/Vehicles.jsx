@@ -5,7 +5,7 @@ import { fmtMinL, pick } from '@/lib/i18n';
 
 const T = {
   en: {
-    eyebrow: 'Our fleet', h1: 'The right vehicle ', h2: 'for every load.',
+    eyebrow: 'Mini truck & tempo on rent', h1: 'The right vehicle ', h2: 'for every load.',
     lead: 'From a single fridge to a full 3 BHK — pick the size that fits. Your exact price is shown before you book.',
     swipe: (n) => `Swipe to compare all ${n} vehicles`, from: 'from', approx: 'approx.',
     free: (m) => [m, ' free for loading ', '+', ' unloading'], exact: 'Exact price in app', see: (n) => `See how ${n} fares are shown`,

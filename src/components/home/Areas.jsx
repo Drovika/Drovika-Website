@@ -1,22 +1,23 @@
-import { MapPin, Building2, Factory, Waves, TreePine } from 'lucide-react';
+import Link from 'next/link';
+import { MapPin, Building2, Factory, Waves, TreePine, ArrowRight } from 'lucide-react';
 import { areaGroups, areas } from '@/config/site';
-import { pick } from '@/lib/i18n';
+import { pick, lp } from '@/lib/i18n';
 
 const T = {
   en: {
-    eyebrow: 'Service area', h1: 'From Colaba to Palghar', h2: 'Uran to Badlapur.',
+    eyebrow: 'Goods transport service area', h1: 'From Colaba to Palghar', h2: 'Uran to Badlapur.',
     lead: 'Drovika covers Mumbai, the Thane district, Navi Mumbai and the Vasai to Palghar belt. If your pickup, drop and stops are all inside this zone, we\u2019ll get it there.',
-    regions: 'regions', covered: 'areas covered', days: 'days a week', zone: 'Drovika service zone', nAreas: (n) => `${n} areas`,
+    regions: 'regions', covered: 'areas covered', days: 'days a week', zone: 'Drovika service zone', nAreas: (n) => `${n} areas`, more: 'See all areas we serve', cH1: 'Pickup and drop ', cH2: 'anywhere in the zone.', cP: 'Mumbai to Thane, Dadar to Vashi, Andheri to Virar. Any two places inside the zone can be booked, and the app tells you before booking if an address is outside it.',
   },
   hi: {
     eyebrow: 'सर्विस एरिया', h1: 'कोलाबा से पालघर', h2: 'उरण से बदलापुर तक।',
     lead: 'Drovika मुंबई, ठाणे ज़िला, नवी मुंबई और वसई से पालघर तक चलता है। अगर आपका पिकअप, ड्रॉप और सारे स्टॉप इस ज़ोन के अंदर हैं, तो हम पहुँचा देंगे।',
-    regions: 'इलाके', covered: 'एरिया शामिल', days: 'दिन हफ़्ते में', zone: 'Drovika सर्विस ज़ोन', nAreas: (n) => `${n} एरिया`,
+    regions: 'इलाके', covered: 'एरिया शामिल', days: 'दिन हफ़्ते में', zone: 'Drovika सर्विस ज़ोन', nAreas: (n) => `${n} एरिया`, more: 'हमारे सारे एरिया देखें', cH1: 'पिकअप और ड्रॉप ', cH2: 'ज़ोन में कहीं भी।', cP: 'मुंबई से ठाणे, दादर से वाशी, अंधेरी से विरार। ज़ोन के अंदर किसी भी दो जगह के बीच बुकिंग हो सकती है, और पता ज़ोन से बाहर हो तो ऐप बुकिंग से पहले बता देता है।',
   },
   mr: {
     eyebrow: 'सर्व्हिस एरिया', h1: 'कुलाबा ते पालघर', h2: 'उरण ते बदलापूर.',
     lead: 'Drovika मुंबई, ठाणे जिल्हा, नवी मुंबई आणि वसई ते पालघर पट्ट्यात चालते. तुमचा पिकअप, ड्रॉप आणि सर्व स्टॉप या झोनमध्ये असतील, तर आम्ही पोहोचवू.',
-    regions: 'विभाग', covered: 'एरिया समाविष्ट', days: 'दिवस आठवड्यात', zone: 'Drovika सर्व्हिस झोन', nAreas: (n) => `${n} एरिया`,
+    regions: 'विभाग', covered: 'एरिया समाविष्ट', days: 'दिवस आठवड्यात', zone: 'Drovika सर्व्हिस झोन', nAreas: (n) => `${n} एरिया`, more: 'आमचे सर्व एरिया पाहा', cH1: 'पिकअप आणि ड्रॉप ', cH2: 'झोनमध्ये कुठेही.', cP: 'मुंबई ते ठाणे, दादर ते वाशी, अंधेरी ते विरार. झोनमधील कोणत्याही दोन ठिकाणांमध्ये बुकिंग करता येते, आणि पत्ता झोनबाहेर असेल तर ॲप बुकिंगआधी सांगते.',
   },
 };
 
@@ -86,21 +87,32 @@ function ZoneMap({ lang }) {
   );
 }
 
-export default function Areas({ lang = 'en' }) {
+export default function Areas({ lang = 'en', more = true, compact = false }) {
   const t = pick(T, lang);
   return (
-    <section className="sec areas2" id="areas">
+    <section className={`sec areas2${compact ? ' areas2--compact' : ''}`} id="areas">
       <div className="wrap">
         <div className="areas2__top">
           <div className="areas2__copy rv">
-            <span className="eyebrow">{t.eyebrow}</span>
-            <h2 className="h-section">{t.h1}<span className="pn">,</span> <span className="it">{t.h2}</span></h2>
-            <p className="lead">{t.lead}</p>
+            {compact ? (
+              <>
+                <span className="eyebrow">{t.zone}</span>
+                <h2 className="h-section">{t.cH1}<span className="it">{t.cH2}</span></h2>
+                <p className="lead">{t.cP}</p>
+              </>
+            ) : (
+              <>
+                <span className="eyebrow">{t.eyebrow}</span>
+                <h2 className="h-section">{t.h1}<span className="pn">,</span> <span className="it">{t.h2}</span></h2>
+                <p className="lead">{t.lead}</p>
+              </>
+            )}
             <dl className="areas2__stats">
               <div><dt>{areaGroups.length}</dt><dd>{t.regions}</dd></div>
               <div><dt>{areas.length}+</dt><dd>{t.covered}</dd></div>
               <div><dt>7</dt><dd>{t.days}</dd></div>
             </dl>
+            {more ? <Link href={lp(lang, '/areas/')} className="fw__cta areas2__more">{t.more} <ArrowRight size={18} /></Link> : null}
           </div>
           <div className="zmap rv" style={{ '--d': '.1s' }}>
             <ZoneMap lang={lang} />

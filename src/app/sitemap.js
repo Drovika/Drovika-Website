@@ -10,7 +10,7 @@ export default function sitemap() {
     url: `${site.url}${pageUrl(lang, page)}`,
     lastModified: now,
     changeFrequency: page === 'home' ? 'weekly' : 'monthly',
-    priority: page === 'home' ? (lang === 'en' ? 1 : 0.9) : 0.6,
+    priority: page === 'home' ? (lang === 'en' ? 1 : 0.9) : ['services', 'areas'].includes(page) ? 0.8 : 0.6,
     alternates: { languages: { 'en-IN': `${site.url}${pageUrl('en', page)}`, 'hi-IN': `${site.url}${pageUrl('hi', page)}`, 'mr-IN': `${site.url}${pageUrl('mr', page)}` } },
   })));
   const legal = ['privacy/', 'terms/', 'refund/', 'delete-account/'].map((p) => ({

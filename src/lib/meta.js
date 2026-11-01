@@ -23,8 +23,18 @@ const M = {
     hi: { title: 'Drovika से संपर्क करें — कॉल, WhatsApp या ईमेल', description: `बुकिंग में मदद, बिज़नेस डिलीवरी या ड्राइवर साइन-अप के लिए Drovika टीम से बात करें। ${site.phone} पर कॉल करें या WhatsApp करें।` },
     mr: { title: 'Drovika शी संपर्क करा — कॉल, WhatsApp किंवा ईमेल', description: `बुकिंगसाठी मदत, व्यवसाय डिलिव्हरी किंवा ड्रायव्हर साइन-अपसाठी Drovika टीमशी बोला. ${site.phone} वर कॉल करा किंवा WhatsApp करा.` },
   },
+  services: {
+    en: { title: { absolute: 'Mini Truck & Tempo on Rent in Mumbai — House Shifting, Shop & Business Delivery | Drovika' }, description: 'Book a 3 wheeler, Tata Ace, pickup, tempo or truck in Mumbai, Thane and Navi Mumbai for house shifting, shop stock, business deliveries, furniture and office moves. Price shown before you book.' },
+    hi: { title: { absolute: 'मुंबई में मिनी ट्रक और टेम्पो किराए पर — घर शिफ़्टिंग, दुकान और बिज़नेस डिलीवरी | Drovika' }, description: 'मुंबई, ठाणे और नवी मुंबई में घर शिफ़्टिंग, दुकान का माल, बिज़नेस डिलीवरी, फ़र्नीचर और ऑफ़िस शिफ़्टिंग के लिए 3 व्हीलर, टाटा ऐस, पिकअप, टेम्पो या ट्रक बुक करें। बुकिंग से पहले किराया।' },
+    mr: { title: { absolute: 'मुंबईत मिनी ट्रक आणि टेम्पो भाड्याने — घर शिफ्टिंग, दुकान आणि व्यवसाय डिलिव्हरी | Drovika' }, description: 'मुंबई, ठाणे आणि नवी मुंबईत घर शिफ्टिंग, दुकानाचा माल, व्यवसाय डिलिव्हरी, फर्निचर आणि ऑफिस शिफ्टिंगसाठी 3 व्हीलर, टाटा एस, पिकअप, टेम्पो किंवा ट्रक बुक करा. बुकिंगआधी भाडे.' },
+  },
+  areas: {
+    en: { title: { absolute: 'Areas We Serve — Mumbai, Thane, Navi Mumbai, Palghar | Drovika' }, description: 'Drovika goods transport covers Mumbai, Thane, Kalyan, Dombivli, Bhiwandi, Navi Mumbai, Panvel, Vasai, Virar and Palghar. Mini truck and tempo booking across the region.' },
+    hi: { title: { absolute: 'हमारे एरिया — मुंबई, ठाणे, नवी मुंबई, पालघर | Drovika' }, description: 'Drovika माल ढुलाई मुंबई, ठाणे, कल्याण, डोंबिवली, भिवंडी, नवी मुंबई, पनवेल, वसई, विरार और पालघर में। पूरे क्षेत्र में मिनी ट्रक और टेम्पो बुकिंग।' },
+    mr: { title: { absolute: 'आमचे एरिया — मुंबई, ठाणे, नवी मुंबई, पालघर | Drovika' }, description: 'Drovika मालवाहतूक मुंबई, ठाणे, कल्याण, डोंबिवली, भिवंडी, नवी मुंबई, पनवेल, वसई, विरार आणि पालघरमध्ये. संपूर्ण प्रदेशात मिनी ट्रक आणि टेम्पो बुकिंग.' },
+  },
 };
-const PATH = { home: '/', drivers: '/drivers/', about: '/about/', contact: '/contact/' };
+const PATH = { home: '/', drivers: '/drivers/', about: '/about/', contact: '/contact/', services: '/services/', areas: '/areas/' };
 const LOCALE = { en: 'en_IN', hi: 'hi_IN', mr: 'mr_IN' };
 const url = (lang, page) => (lang === 'en' ? PATH[page] : `/${lang}${PATH[page]}`);
 
