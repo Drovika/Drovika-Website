@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Eye, Target, Heart, IndianRupee, ShieldCheck, Users, ArrowRight } from 'lucide-react';
 import PageHero from '@/components/PageHero';
+import HeroArt from '@/components/HeroArt';
 import VehicleArt from '@/components/VehicleArt';
 import { site, vehicles } from '@/config/site';
 import { pick, lp } from '@/lib/i18n';
@@ -58,6 +59,7 @@ export default function AboutView({ lang = 'en' }) {
         eyebrow={t.eb}
         title={<>{t.t1}<span className="pn">,</span> <span className="it">{t.t2}</span>{t.t3}<span className="pn">{dot}</span></>}
         lead={t.lead}
+        art={<HeroArt kind="brand" lang={lang} udyam={site.udyam} />}
       />
 
       <section className="sec about">

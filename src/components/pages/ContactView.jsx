@@ -1,5 +1,6 @@
 import { Phone, Mail, MapPin, Clock, ShieldCheck } from 'lucide-react';
 import PageHero from '@/components/PageHero';
+import HeroArt from '@/components/HeroArt';
 import ContactForm from '@/components/ContactForm';
 import { WhatsAppIcon } from '@/components/StoreButton';
 import { site, waLink, telLink } from '@/config/site';
@@ -20,7 +21,7 @@ export default function ContactView({ lang = 'en' }) {
   ];
   return (
     <>
-      <PageHero eyebrow={t.eb} title={<>{t.t1}<span className="it">{t.t2}</span></>} lead={t.lead} />
+      <PageHero eyebrow={t.eb} title={<>{t.t1}<span className="it">{t.t2}</span></>} lead={t.lead} art={<HeroArt kind="support" lang={lang} />} />
       <section className="sec contact">
         <div className="wrap contact__row">
           <div className="contact__left">

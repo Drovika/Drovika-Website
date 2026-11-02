@@ -7,6 +7,7 @@ import {
   House, Store, Package, Sofa, Building2, HardHat,
 } from 'lucide-react';
 import PageHero from '@/components/PageHero';
+import HeroArt from '@/components/HeroArt';
 import VehicleArt from '@/components/VehicleArt';
 import StoreButton, { WhatsAppIcon } from '@/components/StoreButton';
 import Areas from '@/components/home/Areas';
@@ -186,7 +187,7 @@ export default function ServiceView({ slug, lang = 'en' }) {
 
   return (
     <>
-      <PageHero eyebrow={t.eb} title={<>{t.t1}<span className="it">{t.t2}</span></>} lead={t.lead}>
+      <PageHero eyebrow={t.eb} title={<>{t.t1}<span className="it">{t.t2}</span></>} lead={t.lead} art={<HeroArt kind={S.areas ? 'route' : 'fleet'} lang={lang} />}>
         <div className="svc__hero-btns">
           <StoreButton app="customer" lang={lang} />
           <a href={telLink()} className="btn btn--ghost"><Phone size={18} /> {u.call}</a>
