@@ -6,6 +6,7 @@ import '@/styles/home.css';
 import '@/styles/pages.css';
 import '@/styles/refine.css';
 import '@/styles/premium.css';
+import '@/styles/mobile.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Reveal from '@/components/Reveal';

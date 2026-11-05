@@ -1,0 +1,90 @@
+/* 5 Nov — Phone layout polish (only below 640px; desktop is untouched).
+   1) Page tops and section headings are centred on phones, so the page doesn't look stuck to the left.
+   2) Simple one-column cards (services, perks) are centred too. Lists, FAQs, forms and the footer link lists stay left — they read better that way.
+   3) Hindi / Marathi: Devanagari looks smaller than English at the same size, so small labels get a little bigger,
+      no letter-spacing (it breaks joined letters) and a bit more line height. */
+
+@media (max-width: 640px) {
+  /* ── 1. Page tops (Services, Areas, About, Contact, Guides) ── */
+  .phero__copy { text-align: center; margin-left: auto; margin-right: auto; }
+  .phero__lead { margin-left: auto; margin-right: auto; }
+  .svc__hero-btns { justify-content: center; }
+  .svc__crumbs { justify-content: center; }
+
+  /* Section headings */
+  .sec__head, .faq__head, .price__copy, .areas2__copy, .dband__copy, .dl__copy, .ftime__head, .gintro {
+    text-align: center; margin-left: auto; margin-right: auto;
+  }
+  .sec__head .lead, .faq__head .lead, .price__copy .lead, .areas2__copy .lead, .dband__lead, .ftime__head .lead, .gintro .lead {
+    margin-left: auto; margin-right: auto;
+  }
+
+  /* Eyebrow: a small line on both sides when centred */
+  .phero__copy .eyebrow, .sec__head .eyebrow, .faq__head .eyebrow, .price__copy .eyebrow, .areas2__copy .eyebrow,
+  .dband__copy .eyebrow, .dl__copy .eyebrow, .ftime__head .eyebrow, .gintro .eyebrow { justify-content: center; }
+  .phero__copy .eyebrow::after, .sec__head:not(.sec__head--center) .eyebrow::after, .faq__head .eyebrow::after,
+  .price__copy .eyebrow::after, .areas2__copy .eyebrow::after, .dband__copy .eyebrow::after,
+  .dl__copy .eyebrow::after, .ftime__head .eyebrow::after, .gintro .eyebrow::after {
+    content: ''; width: 16px; height: 1.5px; background: currentColor; border-radius: 2px; flex: none;
+  }
+
+  /* Button rows and link rows under centred text */
+  .price__ctas, .dband__ctas, .dl__copy .hero__ctas, .svc__also { justify-content: center; }
+  .dband__fleet { justify-content: center; }
+
+  .svc__faq > .h-section { text-align: center; }
+  /* Tick / icon lists inside centred blocks stay left-aligned (icon + text read as one row) */
+  .price__points, .dl__copy ul { text-align: left; }
+  .dl__copy ul { display: inline-flex; flex-direction: column; }
+  .dl__copy > svg, .dl__copy > :first-child { margin-left: auto; margin-right: auto; }
+  .dl__btns { justify-content: center; }
+  .areas2__stats { justify-content: center; }
+  .areas2__more { margin-left: auto; margin-right: auto; }
+
+  /* Drivers page: "Fair rules" and "Start earning" headings centred, their lists stay left */
+  .fair__row > .rv, .join__row > .rv { text-align: center; }
+  .fair__row > .rv .lead { margin-left: auto; margin-right: auto; }
+  .fair__list, .join__steps { text-align: left; }
+  .fair__row > .rv > .eyebrow, .join__row > .rv > .eyebrow { justify-content: center; }
+  .fair__row > .rv > .eyebrow::after, .join__row > .rv > .eyebrow::after {
+    content: ''; width: 16px; height: 1.5px; background: currentColor; border-radius: 2px; flex: none;
+  }
+  /* About page: "Why we started" heading centred, the story text stays left (easier to read) */
+  .about__story > .h-section { text-align: center; }
+
+  /* Footer: logo, line and store button centred; link lists stay left */
+  .ftr__brand { text-align: center; }
+  .ftr__brand > a, .ftr__brand > p { margin-left: auto; margin-right: auto; }
+  .ftr__brand > a { display: inline-flex; }
+  .ftr__stores { justify-content: center; }
+  .ftr__bottom { text-align: center; justify-content: center; }
+
+  /* ── 2. Simple cards ── */
+  .svc__use, .dperk { text-align: center; align-items: center; }
+  .svc__use .bx__ic, .dperk .bx__ic { margin-left: auto; margin-right: auto; }
+  .svc__fits { justify-content: center; }
+}
+
+/* ── 3. Hindi / Marathi on phones ── */
+@media (max-width: 640px) {
+  :lang(hi) .eyebrow, :lang(mr) .eyebrow { font-size: 14.5px; letter-spacing: 0; line-height: 1.5; }
+  :lang(hi) .store__text small, :lang(mr) .store__text small { font-size: 11.5px; letter-spacing: 0; }
+  :lang(hi) .hero__pill em, :lang(mr) .hero__pill em,
+  :lang(hi) .two__tag, :lang(mr) .two__tag, :lang(hi) .safe__tag, :lang(mr) .safe__tag,
+  :lang(hi) .dl__app, :lang(mr) .dl__app, :lang(hi) .store__tag, :lang(mr) .store__tag,
+  :lang(hi) .dial__num small, :lang(mr) .dial__num small { letter-spacing: 0; font-size: 12px; }
+
+  :lang(hi) .lead, :lang(mr) .lead, :lang(hi) p, :lang(mr) p { line-height: 1.7; }
+  :lang(hi) .svc__use p, :lang(mr) .svc__use p, :lang(hi) .dperk p, :lang(mr) .dperk p,
+  :lang(hi) .bx p, :lang(mr) .bx p,
+  :lang(hi) .price__points p, :lang(mr) .price__points p, :lang(hi) .svc__crumbs, :lang(mr) .svc__crumbs { font-size: 14.5px; }
+  :lang(hi) .svc__meta, :lang(mr) .svc__meta, :lang(hi) .svc__vtop small, :lang(mr) .svc__vtop small,
+  :lang(hi) .svc__price small, :lang(mr) .svc__price small,
+  :lang(hi) .vcard__cap, :lang(mr) .vcard__cap, :lang(hi) .vcard__price small, :lang(mr) .vcard__price small,
+  :lang(hi) .vcard__free, :lang(mr) .vcard__free, :lang(hi) .pcard__name small, :lang(mr) .pcard__name small,
+  :lang(hi) .bx__checks li, :lang(mr) .bx__checks li, :lang(hi) .bx__pills span, :lang(mr) .bx__pills span,
+  :lang(hi) .hero__stats dd, :lang(mr) .hero__stats dd, :lang(hi) .hero__offer, :lang(mr) .hero__offer,
+  :lang(hi) .ftime__note, :lang(mr) .ftime__note, :lang(hi) .rail-hint, :lang(mr) .rail-hint { font-size: 13.5px; }
+  :lang(hi) .ftr__col h4, :lang(mr) .ftr__col h4 { font-size: 13px; letter-spacing: 0; }
+  :lang(hi) .phero__title, :lang(mr) .phero__title { line-height: 1.25; }
+}
