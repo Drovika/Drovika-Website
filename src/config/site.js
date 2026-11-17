@@ -25,8 +25,8 @@ export const site = {
   // If a rule changes in the app, switch the matching line off here so the website never promises more.
   freeCancel: true,       // customers cancel without a fee (a reason is asked); the driver who had arrived gets priority
 
-  // Play Store links (package names from the apps). Set appsLive: true once both apps are published.
-  appsLive: false,
+  // Play Store links (package names from the apps). Both apps are live on Google Play since Nov 2026.
+  appsLive: true,
   customerApp: 'https://play.google.com/store/apps/details?id=in.drovika.app',
   partnerApp: 'https://play.google.com/store/apps/details?id=in.drovika.partner',
 

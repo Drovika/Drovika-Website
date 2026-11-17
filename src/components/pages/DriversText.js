@@ -1,7 +1,7 @@
 // Words for the "Drive with us" page in English, Hindi and Marathi
 export const DRIVERS_T = {
   en: {
-    pill: 'Drovika Partner · Mumbai', h1a: 'Your vehicle', h1b: 'Your hours', h1c: 'Your earnings.',
+    pill: 'Drovika Partner · Now on Google Play', h1a: 'Your vehicle', h1b: 'Your hours', h1c: 'Your earnings.',
     lead: 'Attach your 3 wheeler, Tata Ace, pickup, tempo or truck with Drovika and get goods transport trips across Mumbai — no middlemen, no fixed shifts.',
     app: 'Partner app', ask: 'Ask on WhatsApp', waMsg: 'Hi Drovika, I want to join as a driver partner.',
     offerAria: 'Drovika Partner app: a new trip request', newTrip: 'New trip', youEarn: 'You earn', shown: 'Shown before you accept',
@@ -55,7 +55,7 @@ export const DRIVERS_T = {
     ctaH: 'Ready to drive with Drovika', ctaP: 'Download the Partner app and finish sign-up in about 10 minutes.', talk: 'Talk to our team', self: 'Booking for yourself?',
   },
   hi: {
-    pill: 'Drovika पार्टनर · मुंबई', h1a: 'आपकी गाड़ी', h1b: 'आपका समय', h1c: 'आपकी कमाई।',
+    pill: 'Drovika पार्टनर · अब Google Play पर', h1a: 'आपकी गाड़ी', h1b: 'आपका समय', h1c: 'आपकी कमाई।',
     lead: 'अपना 3 व्हीलर, टाटा ऐस, पिकअप, टेम्पो या ट्रक Drovika से जोड़ें और पूरे मुंबई में माल ढुलाई की ट्रिप पाएँ — न बिचौलिया, न तय शिफ़्ट।',
     app: 'पार्टनर ऐप', ask: 'WhatsApp पर पूछें', waMsg: 'नमस्ते Drovika, मुझे ड्राइवर पार्टनर के रूप में जुड़ना है।',
     offerAria: 'Drovika पार्टनर ऐप: नई ट्रिप', newTrip: 'नई ट्रिप', youEarn: 'आपकी कमाई', shown: 'ट्रिप लेने से पहले दिखती है',
@@ -109,7 +109,7 @@ export const DRIVERS_T = {
     ctaH: 'Drovika के साथ ड्राइव करने को तैयार', ctaP: 'पार्टनर ऐप डाउनलोड करें और लगभग 10 मिनट में साइन-अप पूरा करें।', talk: 'हमारी टीम से बात करें', self: 'अपने लिए बुकिंग करनी है?',
   },
   mr: {
-    pill: 'Drovika पार्टनर · मुंबई', h1a: 'तुमची गाडी', h1b: 'तुमचा वेळ', h1c: 'तुमची कमाई.',
+    pill: 'Drovika पार्टनर · आता Google Play वर', h1a: 'तुमची गाडी', h1b: 'तुमचा वेळ', h1c: 'तुमची कमाई.',
     lead: 'तुमची 3 व्हीलर, टाटा एस, पिकअप, टेम्पो किंवा ट्रक Drovika सोबत जोडा आणि संपूर्ण मुंबईत मालवाहतुकीच्या ट्रिप मिळवा — ना मध्यस्थ, ना ठरलेली शिफ्ट.',
     app: 'पार्टनर ॲप', ask: 'WhatsApp वर विचारा', waMsg: 'नमस्कार Drovika, मला ड्रायव्हर पार्टनर म्हणून जोडायचे आहे.',
     offerAria: 'Drovika पार्टनर ॲप: नवीन ट्रिप', newTrip: 'नवीन ट्रिप', youEarn: 'तुमची कमाई', shown: 'ट्रिप घेण्याआधी दिसते',

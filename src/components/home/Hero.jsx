@@ -26,7 +26,7 @@ const ace = vehicles.find((v) => v.slug === 'tata_ace');
 
 const T = {
   en: {
-    newTag: 'New', pill: 'Fair rules for customers and drivers',
+    newTag: 'Live', pill: 'Now on Google Play',
     t1: 'Move anything across Mumbai', t2: 'the fair way.',
     lead: 'Book a 3 wheeler, Tata Ace, pickup, tempo or truck in under a minute. One fixed fare, loading and unloading time included, and clear rules that are fair to you and to the driver who carries your goods.',
     promise: 'The Drovika promise', s1: 'starting fare', s2: 'vehicle sizes', s3pre: 'Up to', s3: 'free loading time', s4: 'verified drivers',
@@ -34,7 +34,7 @@ const T = {
     f1: 'Fare locked', f1s: 'No bargaining, either side', f2: (m) => `${m} min free time`, f2s: 'For loading + unloading', f3: 'Verified driver', f3s: 'Licence, RC & ID checked',
   },
   hi: {
-    newTag: 'नया', pill: 'ग्राहक और ड्राइवर, दोनों के लिए सही नियम',
+    newTag: 'लाइव', pill: 'अब Google Play पर उपलब्ध',
     t1: 'मुंबई में कुछ भी भेजें', t2: 'सही तरीके से।',
     lead: '3 व्हीलर, टाटा ऐस, पिकअप, टेम्पो या ट्रक एक मिनट में बुक करें। एक तय किराया, लोडिंग-अनलोडिंग का समय शामिल, और साफ़ नियम जो आपके और आपका सामान ले जाने वाले ड्राइवर, दोनों के लिए सही हैं।',
     promise: 'Drovika का वादा', s1: 'शुरुआती किराया', s2: 'गाड़ियों के साइज़', s3pre: '', s3: 'तक फ़्री लोडिंग टाइम', s4: 'वेरिफ़ाइड ड्राइवर',
@@ -42,7 +42,7 @@ const T = {
     f1: 'किराया लॉक', f1s: 'दोनों तरफ़ से कोई मोलभाव नहीं', f2: (m) => `${m} मिनट फ़्री टाइम`, f2s: 'लोडिंग + अनलोडिंग के लिए', f3: 'वेरिफ़ाइड ड्राइवर', f3s: 'लाइसेंस, RC और ID जाँचे गए',
   },
   mr: {
-    newTag: 'नवीन', pill: 'ग्राहक आणि ड्रायव्हर, दोघांसाठी योग्य नियम',
+    newTag: 'लाइव्ह', pill: 'आता Google Play वर उपलब्ध',
     t1: 'मुंबईत काहीही पाठवा', t2: 'योग्य पद्धतीने.',
     lead: '3 व्हीलर, टाटा एस, पिकअप, टेम्पो किंवा ट्रक एका मिनिटात बुक करा. एक ठरलेले भाडे, लोडिंग-अनलोडिंगचा वेळ समाविष्ट, आणि स्पष्ट नियम जे तुमच्यासाठी आणि तुमचा माल नेणाऱ्या ड्रायव्हरसाठी योग्य आहेत.',
     promise: 'Drovika चे वचन', s1: 'सुरुवातीचे भाडे', s2: 'गाड्यांचे साइझ', s3pre: '', s3: 'पर्यंत मोफत लोडिंग वेळ', s4: 'व्हेरिफाइड ड्रायव्हर',

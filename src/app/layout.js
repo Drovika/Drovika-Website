@@ -74,6 +74,24 @@ const jsonLd = {
       contactPoint: [{ '@type': 'ContactPoint', contactType: 'customer support', telephone: site.phone, email: site.email, areaServed: 'IN', availableLanguage: ['English', 'Hindi', 'Marathi'] }],
       ...(sameAs.length ? { sameAs } : {}),
     },
+    // The two Android apps on Google Play
+    ...[
+      { id: 'app', name: 'Drovika - Delivery & Transport', url: site.customerApp, about: 'Book a mini truck, tempo or truck in Mumbai, Thane and Navi Mumbai.' },
+      { id: 'partner-app', name: 'Drovika Partner - Drive & Earn', url: site.partnerApp, about: 'Get goods transport trips near you and earn with your vehicle.' },
+    ].map((a) => ({
+      '@type': 'MobileApplication',
+      '@id': `${site.url}/#${a.id}`,
+      name: a.name,
+      description: a.about,
+      operatingSystem: 'ANDROID',
+      applicationCategory: 'TravelApplication',
+      url: a.url,
+      downloadUrl: a.url,
+      installUrl: a.url,
+      inLanguage: a.id === 'app' ? ['en-IN', 'hi-IN'] : ['en-IN', 'hi-IN', 'mr-IN'],
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'INR' },
+      publisher: { '@id': `${site.url}/#company` },
+    })),
   ],
 };
 

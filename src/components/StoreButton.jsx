@@ -1,6 +1,6 @@
 import { site } from '@/config/site';
 
-// Google Play button. Until the apps are live it shows "Coming soon".
+// Google Play button. Opens the app on Google Play (site.appsLive). If appsLive is ever false it shows "Coming soon".
 export function PlayIcon({ size = 22 }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" aria-hidden="true">
