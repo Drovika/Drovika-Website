@@ -8,9 +8,9 @@ export const site = {
   tagline: 'Goods transport across Mumbai',
   url: 'https://drovika.in', // your live website address (used for Google / sharing)
 
-  // Contact — TODO: replace with the new business SIM number once you have it
-  phone: '+91 93409 88525', // shown on the site, used for "Call us"
-  whatsapp: '919340988525', // same number, digits only with 91 in front (no + or spaces)
+  // Contact — Drovika business number (WhatsApp Business on this number)
+  phone: '+91 72493 12830', // shown on the site, used for "Call us"
+  whatsapp: '917249312830', // same number, digits only with 91 in front (no + or spaces)
   email: 'support@drovika.in',
   address: 'Mumbai, Maharashtra, India',
   hours: 'Every day, 8 AM – 10 PM',
